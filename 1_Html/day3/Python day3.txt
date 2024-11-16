@@ -1,0 +1,16 @@
+Python day3 
+
+Cell spacing
+cell padding 
+row span 
+column span
+anchor [absolute 
+	relative 
+	id 
+	download 
+	mailto: 
+	target (self, blank, top, parent) 
+	color 
+	title=(hover krne pe naam ayega) 
+	image
+	]

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>required</h3>
+    <form action="">
+        Name: <input type="text" name="fname" required><br><br>
+        lname: <input type="text" name="lname" id=""><br><br>
+        email: <input type="email" name="email" id=""><br><br>
+        <input type="submit" value="submit">
+    </form>
+    <hr>
+    <h3>novalidate</h3>
+    <form action="" novalidate>
+        Name: <input type="text"><br><br>
+        lname: <input type="text" name="" id=""><br><br>
+        email: <input type="email" name="" id=""><br><br>
+        <input type="submit" value="submit">
+    </form>
+    <hr>
+    <h3>formnovalidate</h3>
+    <form action="">
+        Name: <input type="text"><br><br>
+        lname: <input type="text" name="" id=""><br><br>
+        email: <input type="email" name="" id=""><br><br>
+        <input type="submit" value="submit">
+        <input type="submit" value="save" formnovalidate>
+    </form>
+    <hr>
+    <h3>formaction</h3>
+    <form action="#yaha pr koi dusre file ka link">
+        Name: <input type="text"><br><br>
+        lname: <input type="text" name="" id=""><br><br>
+        email: <input type="email" name="" id=""><br><br>
+        <input type="submit" value="submit" formaction="#yaha pr particular file ka naam daal sakte hai">
+        <input type="submit" value="save" formnovalidate>
+    </form>
+    <hr>
+    <h3>target</h3>
+    <form action="" target="_blank">
+        Name: <input type="text"><br><br>
+        lname: <input type="text" name="" id=""><br><br>
+        email: <input type="email" name="" id=""><br><br>
+        <input type="submit" value="submit" formtarget="self">
+    </form>
+    <hr>
+    <h3>formenctype</h3>
+    <form action="" enctype="application/x-www-form-urlencoded">
+        First Name: <input type="text" name="fname"><br><br>
+        Last Name: <input type="text" name="lname"><br><br>
+        <input type="submit">
+        <input type="submit" value="enc-submit" formenctype="multipart/form-data">
+    </form>
+
+
+
+</body>
+
+</html>

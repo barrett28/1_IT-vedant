@@ -1,0 +1,11 @@
+iframe : {nested, /embed/id(= k baad vala)}
+
+sandbox: full restriction, 
+	name, 
+
+img: ismap and usemap
+
+audio:- control, muted, loop, autoplay, preload
+video:- control, muted, loop, autoplay, preload, poster
+object
+

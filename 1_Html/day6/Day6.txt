@@ -1,0 +1,14 @@
+Day6
+
+	required
+	
+	novalidate:- pure form pr ayega 
+
+	formnovalidate:- ye ek element k liye ye use hota hai
+			jyada tar save button k liye use hota hai
+
+	formaction :- pure form pr
+
+	
+
+	

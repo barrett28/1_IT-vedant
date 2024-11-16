@@ -1,0 +1,24 @@
+input:- [datetime-local, week, date, action
+	radio --> (name)
+
+	label me input radio daloge tho text pr se bhi radio click hoga
+	hidden:- ye user ko nhi dikhega 
+
+	autocomplete: default on rehta hai
+
+	accept, autofocus, disabled
+
+	min max (in date and calender)
+
+	placeholder
+
+	step="2" (2 ka step lega )
+
+	pattern ([a-zA-Z0-9]+)  ([a-zA-Z0-9@#]+)
+
+	textarea (rows and columns), (wrap:hard,soft)
+
+	fieldset--> legend
+	
+	
+]
