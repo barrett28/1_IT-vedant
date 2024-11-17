@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #fff;
 }
 
-body{
+body {
     background: linear-gradient(to right, #041308, #0b3317);
 }
 
-.header{
+.header {
     text-align: center;
     padding: 20px;
     /* border: 0.8px solid white; */
@@ -19,24 +19,25 @@ body{
     text-decoration: none;
 }
 
-.description{
+.description {
     font-size: larger;
 }
 
-.section-container{
+.section-container {
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
 }
 
-.dropdown{
+.dropdown {
     flex-direction: row;
     flex-basis: 20%;
     display: flex;
     flex-direction: column;
 }
-.dropdown a{
+
+.dropdown a {
     /* background-color: aquamarine; */
     /* padding: 90px; */
     font-size: 30px;
@@ -48,15 +49,21 @@ body{
 }
 
 .dropdown a::before {
-    content: '•'; /* The bullet symbol */
-    color: white; /* Color of the bullet */
-    font-size: 1.2em; /* Adjust the size of the bullet */
-    margin-right: 10px; /* Space between bullet and text */
-    display: inline-block; /* Make it inline for proper positioning */
-    vertical-align: middle; /* Align it to the middle of the text */
+    content: '•';
+    /* The bullet symbol */
+    color: white;
+    /* Color of the bullet */
+    font-size: 1em;
+    /* Adjust the size of the bullet */
+    margin-right: 10px;
+    /* Space between bullet and text */
+    display: inline-block;
+    /* Make it inline for proper positioning */
+    vertical-align: middle;
+    /* Align it to the middle of the text */
 }
 
-.content{
+.content {
     display: flex;
     flex-basis: 60%;
     flex-direction: column;
@@ -66,9 +73,10 @@ body{
     align-items: center;
     gap: 120px;
     position: relative;
-    
+
 }
-.content p{
+
+.content p {
     text-align: justify;
     font-size: 1.2rem;
     font-family: 'Times New Roman', Times, serif;
@@ -87,20 +95,24 @@ body{
     width: 300px;
     height: 300px;
     position: relative;
-    object-fit: cover; 
+    object-fit: cover;
     overflow: hidden;
     border: 5px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(117, 86, 46, 0.6); /* Layered shadows for a dynamic effect */
-    transition: transform 0.4s ease, box-shadow 0.5s ease; /* Smooth transitions for a dramatic effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(117, 86, 46, 0.6);
+    /* Layered shadows for a dynamic effect */
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
+    /* Smooth transitions for a dramatic effect */
 }
 
 
 .content img:hover {
-    transform: rotate(3deg) scale(1.1); /* Slight rotation  */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 12px 25px rgba(117, 86, 46, 0.8); /* Enhanced shadow for a bolder look */   
+    transform: rotate(3deg) scale(1.1);
+    /* Slight rotation  */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 12px 25px rgba(117, 86, 46, 0.8);
+    /* Enhanced shadow for a bolder look */
 }
 
-.profile{
+.profile {
     display: flex;
     flex-direction: column;
     gap: 120px;
@@ -114,65 +126,69 @@ body{
     width: 300px;
     height: 300px;
     position: relative;
-    object-fit: cover; 
+    object-fit: cover;
     overflow: hidden;
     border: 5px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(117, 86, 46, 0.6); /* Layered shadows for a dynamic effect */
-    transition: transform 0.4s ease, box-shadow 0.5s ease; /* Smooth transitions for a dramatic effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(117, 86, 46, 0.6);
+    /* Layered shadows for a dynamic effect */
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
+    /* Smooth transitions for a dramatic effect */
 }
 
 
 .profile img:hover {
-    transform: rotate(3deg) scale(1.1); /* Slight rotation  */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 12px 25px rgba(117, 86, 46, 0.8); /* Enhanced shadow for a bolder look */   
+    transform: rotate(3deg) scale(1.1);
+    /* Slight rotation  */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 12px 25px rgba(117, 86, 46, 0.8);
+    /* Enhanced shadow for a bolder look */
 }
 
-.prof-desc span{
+.prof-desc span {
     color: chocolate;
 }
 
-.prof-desc h2{
+.prof-desc h2 {
     margin-bottom: 10px;
 }
 
-.classified{
+.classified {
     flex-basis: 60%;
 }
 
-.classified h2{
+.classified h2 {
     margin-bottom: 10px;
     color: chocolate;
 }
 
-.classified p{
+.classified p {
     margin-bottom: 20px;
     font-size: large;
 }
 
-.power{
+.power {
     flex-basis: 60%;
 }
 
-.power h2{
+.power h2 {
     color: chocolate;
     margin-bottom: 10px;
 }
 
-.power p{
+.power p {
     margin-bottom: 20px;
     font-size: large;
 }
 
-.battle-ground{
+.battle-ground {
     flex-basis: 60%;
 }
 
-.battle-ground h2{
+.battle-ground h2 {
     margin-bottom: 10px;
     color: chocolate;
 }
 
-.battle-ground p{
+.battle-ground p {
     margin-bottom: 20px;
     font-size: large;
 }
@@ -191,11 +207,15 @@ body{
     bottom: 0;
     left: 0;
     width: 0;
-    height: 3px; /* Adjust thickness of the underline */
-    background-color: #fff; /* Set the color of the underline */
-    transition: width 0.3s ease; /* Animation duration */
+    height: 3px;
+    /* Adjust thickness of the underline */
+    background-color: #fff;
+    /* Set the color of the underline */
+    transition: width 0.3s ease;
+    /* Animation duration */
 }
 
 .animated-underline:hover::after {
-    width: 100%; /* On hover, expand the underline to the full width */
+    width: 100%;
+    /* On hover, expand the underline to the full width */
 }
