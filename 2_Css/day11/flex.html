@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-box</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            height: 400px;
+            display: flex;
+            /* flex-direction: row-reverse; */
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            /* align-items: stretch; */
+            align-items: start;
+            align-content: end;
+        }
+
+        .flex-item {
+            background-color: brown;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            font-size: large;
+        }
+
+        #e {
+            order: 1;
+
+        }
+
+        #c {
+            flex-grow: 2;
+        }
+
+        #d {
+            flex-shrink: 4;
+        }
+
+        #f {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex-item" id="a">item-1</div>
+        <div class="flex-item" id="b">item-2</div>
+        <div class="flex-item" id="c">item-3</div>
+        <div class="flex-item" id="d">item-4</div>
+        <div class="flex-item" id="e">item-5</div>
+        <div class="flex-item" id="f">item-6</div>
+        <div class="flex-item" id="g">item-7</div>
+    </div>
+</body>
+
+</html>
