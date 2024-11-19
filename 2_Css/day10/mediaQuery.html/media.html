@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        body {
+            background-color: blueviolet;
+        }
+
+        h1 {
+            color: blue;
+            background-color: blanchedalmond;
+        }
+
+        /* @media (max-width:600px) {
+            body {
+                background-color: brown;
+            }
+
+            h1 {
+                color: azure;
+                background-color: black;
+            }
+        } */
+
+        @media (orientation:portrait),
+        (max-width:600) {
+            body {
+                color: brown;
+                background-color: aqua;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hello everyone</h1>
+</body>
+
+</html>
