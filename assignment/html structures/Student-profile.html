@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-profile</title>
+    <style>
+        .div {
+            text-align: center;
+            margin-top: 100px;
+            width: 100%;
+            height: 100vh;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            border: 2px solid red;
+            width: 40%;
+            margin-left: 20%;
+            text-align: justify;
+        }
+
+        form input {
+            text-align: justify;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <form action="">
+            <b>FirstName:</b> <input type="text" name="fname" placeholder="First Name"><br>
+            <b>LastName:</b> <input type="text" name="lname" placeholder="Last Name"><br>
+            <b>Date of Birth:</b> <input type="date" name="date" id=""><br>
+            <b>Age:</b> <input type="number" name="age" placeholder="Age"><br>
+            <b>Current Address:</b> <textarea name="cur_address" id="" style="width: 25%;" rows="10"></textarea><br>
+            <b>Permanent Address:</b> <textarea name="per_address" id="" style="width: 25%;"></textarea><br>
+            <button type="submit">Create</button>
+        </form>
+    </div>
+</body>
+
+</html>
