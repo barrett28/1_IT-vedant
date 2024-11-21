@@ -7,42 +7,72 @@
     <title>Student-profile</title>
     <style>
         .div {
-            text-align: center;
+            width: 50%;
             margin-top: 100px;
-            width: 100%;
-            height: 100vh;
-            border: 2px solid black;
+            margin-left: 38%;
+        }
+
+        .form-group {
             display: flex;
-            justify-content: center;
-        }
-
-        form {
-            border: 2px solid red;
-            width: 40%;
-            margin-left: 20%;
-            text-align: justify;
-        }
-
-        form input {
-            text-align: justify;
-        }
-
-        input {
+            align-items: center;
             margin-bottom: 10px;
         }
+
+        .form-group label {
+            width: 150px;
+            font-weight: 400;
+        }
+
+        .form-group input {
+            padding: 5px;
+        }
+
+        .form-group textarea {
+            padding: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            margin-left: 140px;
+        }
     </style>
+
 </head>
 
 <body>
     <div class="div">
         <form action="">
-            <b>FirstName:</b> <input type="text" name="fname" placeholder="First Name"><br>
-            <b>LastName:</b> <input type="text" name="lname" placeholder="Last Name"><br>
-            <b>Date of Birth:</b> <input type="date" name="date" id=""><br>
-            <b>Age:</b> <input type="number" name="age" placeholder="Age"><br>
-            <b>Current Address:</b> <textarea name="cur_address" id="" style="width: 25%;" rows="10"></textarea><br>
-            <b>Permanent Address:</b> <textarea name="per_address" id="" style="width: 25%;"></textarea><br>
-            <button type="submit">Create</button>
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" name="fname" placeholder="First Name" required><br>
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" name="lname" placeholder="Last Name" required><br>
+            </div>
+            <div class="form-group">
+                <label> Date of Birth:</label>
+                <input type="date" name="date" required><br>
+            </div>
+            <div class="form-group">
+                <label>Enter Age:</label>
+                <input type="number" name="age" placeholder="Age" required><br>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" id="" checked>Male
+                <input type="radio" name="gender" id="">Female
+            </div>
+            <div class="form-group">
+                <label>Current Address:</label>
+                <textarea name="cur_address" id="cur_address" rows="4" cols="49" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Permanent Address:</label>
+                <textarea name="per_address" id="per_address" rows="4" cols="49" required></textarea>
+            </div>
+
+            <button style="justify-content: center; align-items: center ;" type="submit">Create</button>
         </form>
     </div>
 </body>
