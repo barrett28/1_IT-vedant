@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container .header {
+            width: 100%;
+            background-color: black;
+            color: #fff;
+            font-size: x-large;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .container .nav-bar {
+            padding: 10px;
+            font-size: 20px;
+            display: flex;
+            justify-content: start;
+        }
+
+        .container .nav-bar a {
+            color: black;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .container .section {
+            height: 80vh;
+            font-size: large;
+            text-align: center;
+        }
+
+        .container .section p {
+            margin-top: 200px;
+        }
+
+        .container .footer {
+            background-color: #080808;
+            padding: 10px;
+        }
+
+        .container .footer p {
+            color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-text">
+                this is a header section
+            </div>
+        </div>
+        <div class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="section">
+            <p>This is a section container</p>
+        </div>
+        <div class="footer">
+            <p>Footer section</p>
+        </div>
+    </div>
+</body>
+
+</html>

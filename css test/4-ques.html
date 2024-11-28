@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Row Column</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            grid-row: 100px 100px 100px;
+        }
+
+        @media (max-width:600px) {
+            .container {
+                display: grid;
+                grid-template-columns: 200px;
+                grid-row: 100px;
+            }
+
+            .a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>element</p>
+        <p>element</p>
+        <p>element</p>
+        <p class="a">element</p>
+        <p class="a">element</p>
+        <p class="a">element</p>
+        <p class="a">element</p>
+        <p class="a">element</p>
+        <p class="a">element</p>
+    </div>
+</body>
+
+</html>
