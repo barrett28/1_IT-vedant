@@ -126,6 +126,32 @@ nav ul li a:hover::after{
     font-weight: 600;
     margin-bottom: 20px;
  }
+ .text-left{
+    margin-bottom: 20px;
+ }
+
+ .info-section{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+    padding: 40px;
+ }
+
+ .skill-section, .exp-section, .edu-section{
+    background-color: #262626;
+    border-radius: 10px;
+    padding: 20px;
+ }
+ .skill-section h3 , .exp-section h3, .edu-section h3{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+ }
+ .skill-section p, .exp-section p , .edu-section p{
+    margin-bottom: 10px;
+ }
+
 
  .tabs-section{
     display: flex;
@@ -177,32 +203,6 @@ nav ul li a:hover::after{
  .about-text{
     text-align: center;
  }
- .text-left{
-    margin-bottom: 20px;
- }
-
- .info-section{
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 30px;
-    padding: 40px;
- }
-
- .skill-section, .exp-section, .edu-section{
-    background-color: #262626;
-    border-radius: 10px;
-    padding: 20px;
- }
- .skill-section h3 , .exp-section h3, .edu-section h3{
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
- }
- .skill-section p, .exp-section p , .edu-section p{
-    margin-bottom: 10px;
- }
-
 
 
  .service-list{
