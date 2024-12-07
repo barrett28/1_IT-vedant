@@ -1,43 +1,65 @@
-# import mysql.connector
+from sql_connection import get_sql_connection
 
-# cnx = mysql.connector.connect(user='root', password='root',
-#                               host='127.0.0.1',
-#                               database='gs')
+def get_all_products(connection):
 
-# cursor = cnx.cursor()
+    
 
-# query = "SELECT * FROM products;"
+    cursor = connection.cursor()
 
-# cursor.execute(query)
+    # Corrected query
+    query = ("SELECT products.product_id, products.name, products.uom_id, products.price_per_unit, uom.uom_name "
+            "FROM products INNER JOIN uom ON  products.uom_id=uom.uom_id;")
 
-# for (product_id, name, uom_id, pice_per_unit) in cursor:
-#     print(product_id, name, uom_id, pice_per_unit)
+    cursor.execute(query)
 
-# cnx.close()
+    response = []
+    
+    # Fetch and print rows
+    for (product_id, name, uom_id, price_per_unit, uom_name) in cursor:
+        response.append(
+            {
+                'product_id' : product_id,
+                "name" : name,
+                "uom_id" : uom_id ,
+                "price_per_unit" : price_per_unit,
+                "uom_name" : uom_name 
+            }
+        )
 
+    connection.close()
 
-import mysql.connector
+    return response
 
-# Connect to the database
-cnx = mysql.connector.connect(
-    user='root', 
-    password='root',
-    host='127.0.0.1',
-    database='gs'
-)
+# def insert_new_product(connection, product):
+#     cursor = connection.cursor()
 
-cursor = cnx.cursor()
+#     query = (
+#                 "INSERT INTO products"
+#                 "(name, uom_id, proce_per_unit)"
+#                 "VALUES (%s, %s, %s)"
+#              )
+#     data = (product["product_name"], product["uom_id"], product["price_per_unit"])
+#     cursor.execute(query, data)
+#     connection.commit()
 
-# Corrected query
-# query = "SELECT * FROM products;"
-query = ("SELECT products.product_id, products.name, products.uom_id, products.price_per_unit, uom.uom_name "
-        "FROM products INNER JOIN uom ON  products.uom_id=uom.uom_id;")
+#     return cursor.lastrowid
 
-cursor.execute(query)
+def insert_new_product(connection, product):
+    cursor = connection.cursor()
+    query = ("INSERT INTO products "
+             "(name, uom_id, price_per_unit)"
+             "VALUES (%s, %s, %s)")
+    data = (product['product_name'], product['uom_id'], product['price_per_unit'])
 
-# Fetch and print rows
-for (product_id, name, uom_id, price_per_unit, uom_name) in cursor:
-    print(product_id, name, uom_id, price_per_unit, uom_name)
+    cursor.execute(query, data)
+    connection.commit()
 
-# Close connection
-cnx.close()
+    return cursor.lastrowid
+
+if __name__=="__main__":
+    connection = get_sql_connection()
+    print(insert_new_product(connection, {
+        "product_name":"cabbage",
+        "uom_id":"1",
+        "price_per_unit":10
+    }))
