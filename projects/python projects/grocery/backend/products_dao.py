@@ -30,20 +30,6 @@ def get_all_products(connection):
 
     return response
 
-# def insert_new_product(connection, product):
-#     cursor = connection.cursor()
-
-#     query = (
-#                 "INSERT INTO products"
-#                 "(name, uom_id, proce_per_unit)"
-#                 "VALUES (%s, %s, %s)"
-#              )
-#     data = (product["product_name"], product["uom_id"], product["price_per_unit"])
-#     cursor.execute(query, data)
-#     connection.commit()
-
-#     return cursor.lastrowid
-
 def insert_new_product(connection, product):
     cursor = connection.cursor()
     query = ("INSERT INTO products "
@@ -56,10 +42,14 @@ def insert_new_product(connection, product):
 
     return cursor.lastrowid
 
+def delete_product(connection, product_id):
+    cursor = connection.cursor()
+    query = ("DELETE FROM products WHERE product_id="+ str(product_id))
+    cursor.execute(query)
+    connection.commit()
+
+    return product_id
+
 if __name__=="__main__":
     connection = get_sql_connection()
-    print(insert_new_product(connection, {
-        "product_name":"cabbage",
-        "uom_id":"1",
-        "price_per_unit":10
-    }))
+    print(delete_product(connection, 4))
