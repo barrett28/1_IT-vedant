@@ -88,6 +88,16 @@ SELECT * FROM con;
 
 DROP TABLE con;
 
+USE avenger_enemy;
+
+USE shield;
+
+SELECT * FROM avengers;
+
+DROP TABLE avengers;
+
+
+
 
 
 

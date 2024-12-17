@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Geist+Mono:wght@100..900&family=Poppins:wght@400;900&display=swap');
+
+:root{
+    --primary-color: #11121a;
+    --hover-color: #272832;
+    --accent-color: #0071FF;
+    --text-color: #c9c9c9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+}
+
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #11121a;
+}
+
+nav{
+    background-color: #11121a;
+    border-bottom: 1px solid var(--hover-color);
+    padding: 20px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav .home-li{
+    margin-right: auto;
+}
+
+nav a{
+    display: flex;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
