@@ -130,3 +130,7 @@ VALUES
 ('Medication A', 100, 50),
 ('Medication B', 200, 30);
 
+SELECT medicine_name, price, quantity_available
+FROM Pharmacy;
+
+

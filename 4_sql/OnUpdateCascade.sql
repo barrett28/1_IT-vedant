@@ -1,5 +1,3 @@
-USE shield;
-
 CREATE TABLE avengers(
 	ar_id INT PRIMARY KEY AUTO_INCREMENT,
     f_name VARCHAR(30),
@@ -24,6 +22,7 @@ CREATE TABLE avengers_enemy(
     enemy_name VARCHAR(30),
     ar_id INT,
     FOREIGN KEY (ar_id) REFERENCES avengers(ar_id)
+    ON UPDATE CASCADE
 );
 
 INSERT INTO avengers_enemy(enemy_name, ar_id)
@@ -36,39 +35,13 @@ VALUES('Armin Zola',1),
       ('Obadiah Stane',2),
       ('Hela',3);
       
- INSERT INTO avengers_enemy(enemy_name)
-VALUES('Gorr'),
-	('Whiplash'),
-	('zemo');
-    
-CREATE TABLE weapon(
-	wp_id INT PRIMARY KEY AUTO_INCREMENT,
-    weapon_name VARCHAR(30),
-    ar_id INT,
-    ae_id INT,
-    FOREIGN KEY(ar_id) REFERENCES avengers(ar_id),
-    FOREIGN KEY(ae_id) REFERENCES avengers_enemy(ae_id)
-);
+UPDATE avengers
+SET ar_id=14
+WHERE ar_id = 4;
 
-INSERT INTO weapon(weapon_name, ar_id, ae_id)
-VALUES('web',4,2),
-	('pym particle',5,null),
-	('magic',6,3),
-	('shield',1,6),
-	('suit',2,7),
-	('milonir',3,8),
-	('vibranium Hand',null,null);
-    
+SELECT * FROM avengers;
+SELECT * FROM avengers_enemy;
+      
 DROP TABLE avengers;
 
 DROP TABLE avengers_enemy;
-
-DROP TABLE weapon;
-    
-SELECT heroic_name from avengers WHERE ar_id = (SELECT ar_id FROM avengers_enemy WHERE enemy_name="Armin Zola");
-
-SELECT weapon_name from weapon WHERE ar_id = (SELECT ar_id FROM avengers WHERE heroic_name="Iron Man");
-
-SELECT * from avengers WHERE ar_id = (SELECT ar_id FROM weapon WHERE weapon_name="shield");
-
-
