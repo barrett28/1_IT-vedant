@@ -1,4 +1,4 @@
-create table avengers(
+	create table avengers(
   ar_id int PRIMARY key AUTO_INCREMENT,
   f_name varchar(30),
   l_name varchar(30),
