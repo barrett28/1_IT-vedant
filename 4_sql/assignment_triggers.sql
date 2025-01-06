@@ -14,6 +14,11 @@ CREATE TABLE after_insert(
     salary float
 );
 
+CREATE TABLE AuditLog(
+	employee_id INT,
+    Action varchar(50)
+);
+
 
 INSERT INTO employee(name, dept, salary)
 VALUES("charat", "IT", 25000),
@@ -42,3 +47,13 @@ SELECT * FROM after_insert;
 
 INSERT INTO employee(emp_id, name, dept, salary)
 VALUES(3, "sham", "automation", 900000);
+
+DELIMITER //
+
+z
+
+
+
+INSERT INTO employee 
+VALUES(1,"first", "qqq", 1212),
+(8,"def", "rrr", 2222);
