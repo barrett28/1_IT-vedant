@@ -1,5 +1,8 @@
+-- ==========isme work hai============
+
 CREATE DATABASE hospital_management_sys;
 USE hospital_management_sys;
+-- SHOW TABLES;
 
 CREATE TABLE patients (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -17,15 +20,15 @@ CREATE TABLE departments (
 );
 
 
-CREATE TABLE Doctors (
-    DoctorID INT AUTO_INCREMENT PRIMARY KEY,
-    FirstName VARCHAR(50) NOT NULL,
-    LastName VARCHAR(50) NOT NULL,
-    Specialty VARCHAR(50) NOT NULL,
-    ContactNumber VARCHAR(15) NOT NULL,
-    DepartmentID INT,
-    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
-);
+-- CREATE TABLE Doctors (
+--     DoctorID INT AUTO_INCREMENT PRIMARY KEY,
+--     FirstName VARCHAR(50) NOT NULL,
+--     LastName VARCHAR(50) NOT NULL,
+--     Specialty VARCHAR(50) NOT NULL,
+--     ContactNumber VARCHAR(15) NOT NULL,
+--     DepartmentID INT,
+--     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+-- );
 
 
 create table dr_name 
@@ -40,6 +43,14 @@ INSERT INTO dr_name(full_name, dept_id)
 VALUES ("Sham Singh", 1),
 ("Satendra Joshi", 2),
 ("Mohan Rathod", 3);
+
+SELECT * FROM dr_name;
+SELECT * FROM dr_contact;
+
+INSERT INTO dr_contact(dr_id, contact)
+VALUES(1, "2154874521"),
+(2,"9856325698"),
+(3,8574966589);
 
 create table dr_contact 
 (
@@ -83,6 +94,8 @@ VALUES
 ('Orthopedics', 'Second Floor'),
 ('Pediatrics', 'Third Floor');
 
+SELECT * FROM departments;
+
 INSERT INTO patients (patient_name, Age, gender, contact, address)
 VALUES
 ('Joy', 45, 'Male', '9876543210', '123 Elm Street'),
@@ -111,21 +124,86 @@ VALUES
 SELECT * FROM patients;
 
 INSERT INTO appointments (patient_id, dr_id, appointment_date, purpose)
-VALUES
-(1, 1, '2024-12-30', 'Heart Checkup'),
-(2, 2, '2024-12-31', 'Knee Pain');
+VALUES(1,1,1,"2024-12-30","Heart Checkup"),
+(2, 2, 2, "2024-12-31", "Knee pain"),
+(3, 3, '2024-08-30', 'regular checkup'),
+(4, 2, '2024-07-31', 'routine checkup');
+
+
 SELECT * FROM appointments;
 
 INSERT INTO bills (patient_id, amount, bill_date, payment_status)
-VALUES
-(1, 1500.00, '2024-12-30', 'Paid'),
-(2, 2000.00, '2024-12-31', 'Pending');
+VALUES(1, 1, 1500.00, "2024-12-30", "Paid"),
+(2,2 , 2000.00, "2024-12-31", "Pending"),
+(3, 150.00, '2024-08-30', 'Paid'),
+(4, 200.00, '2024-07-31', 'Pending');
 
 SELECT * FROM bills;
 
 
 
 
+CREATE DATABASE hospital_management_sys;
+USE hospital_management_sys;
+SHOW TABLES;
 
 
+-- ===============================
+-- QUERIES===============================
+
+
+SELECT appointment_id, purpose FROM appointments;
+
+SELECT patient_id, patient_name, address FROM patients WHERE contact="9876543211";
+
+
+SELECT * FROM patients; 
+
+update patients SET contact="9876543222" WHERE patient_id=1;
+
+
+SELECT appointment_id, purpose, patient_id FROM appointments ORDER BY appointment_id DESC;
+
+SELECT * FROM patients LIMIT 5;
+
+SELECT amount, amount*1.18 AS bill_after_tax FROM bills;
+
+SELECT AVG(age) AS Average_Age FROM patients;
+
+SELECT amount, amount-100 AS REMAINING_PAYMENT FROM bills
+WHERE payment_status="PENDING";
+
+-- SELECT p.patient_name, b.payment_status FROM patients AS p
+-- INNER JOIN bills AS b
+-- ON p.patient_id=b.patient_id
+-- WHERE gender="female" and payment_status="pending";
+
+select * FROM patients;
+
+SELECT patient_name, age FROM patients 
+WHERE gender="female" AND age>30; 
+
+SELECT patient_name, age FROM patients 
+WHERE gender="male" OR age>45; 
+
+SELECT patient_name, age 
+FROM patients 
+WHERE NOT (gender = 'Male' OR age <= 30);
+
+SELECT patient_id, amount
+FROM bills
+WHERE amount BETWEEN 100 AND 1500;
+
+SELECT patient_id, patient_name, age FROM patients
+WHERE age>45;
+
+SELECT p.patient_id, p.patient_name, a.purpose FROM patients AS p
+INNER JOIN appointments AS a
+ON p.patient_id=a.patient_id
+WHERE p.patient_id IN (SELECT patient_id FROM appointments WHERE appointment_id>2 );
+
+SELECT patient_id, patient_name FROM patients 
+WHERE patient_name LIKE "a%";
+
+SELECT DISTINCT gender FROM patients;
 
