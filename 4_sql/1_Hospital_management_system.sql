@@ -207,3 +207,50 @@ WHERE patient_name LIKE "a%";
 
 SELECT DISTINCT gender FROM patients;
 
+ALTER TABLE patients
+ADD COLUMN alternative_number VARCHAR(10) AFTER contact;
+
+ALTER TABLE patients
+ADD COLUMN hospital_id INT FIRST;
+
+SELECT * FROM patients;
+
+ALTER TABLE patients
+CHANGE COLUMN hospital_id hos_id INT;
+
+SELECT * FROM patients;
+
+ALTER TABLE patients
+MODIFY COLUMN contact VARCHAR(12);
+
+SELECT * FROM patients;
+
+ALTER TABLE patients
+DROP COLUMN hos_id,
+DROP COLUMN alternative_number;
+
+SELECT * FROM patients;
+
+-- UPDATE TABLE 
+
+DELETE FROM patients
+WHERE patient_id=22;
+
+SELECT * FROM Patients;
+
+SELECT patient_name AS full_name, contact AS Phone_number FROM patients;
+
+
+SELECT CONCAT(patient_name, "-> ", address) AS patient_details FROM patients;
+
+SELECT UPPER(patient_name) FROM patients;
+
+SELECT SUBSTRING("patientName", 2, 5) AS SubString_Example;
+
+SELECT patient_id, amount, ROUND(amount) AS rounded_amount
+FROM bills;
+
+SELECT patient_id, amount, SQRT(amount) AS sqrt_amount
+FROM bills;
+
+ 
