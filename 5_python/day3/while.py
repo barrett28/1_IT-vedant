@@ -86,4 +86,3 @@
 #     n = n//10
 # print("sum of the digit is: ",sum)
 
-    
