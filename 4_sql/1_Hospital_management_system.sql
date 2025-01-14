@@ -253,4 +253,75 @@ FROM bills;
 SELECT patient_id, amount, SQRT(amount) AS sqrt_amount
 FROM bills;
 
+SELECT * FROM bills;
+
+ SELECT bill_id, bill_date, YEAR(bill_date), MONTH(bill_date) FROM bills;
  
+ SELECT bill_id, DAYNAME(bill_date) FROM bills;
+ 
+ SELECT COUNT(patient_name) FROM patients;
+ 
+ SELECT AVG(amount) AS Avg_Amount FROM bills;
+ 
+SELECT payment_status, SUM(amount) AS grouped_amount 
+FROM bills
+GROUP BY payment_status;
+
+SELECT payment_status, SUM(amount)
+FROM bills
+GROUP BY payment_status
+HAVING SUM(amount)<2000;
+
+ALTER TABLE patients
+MODIFY contact VARCHAR(10) NOT NULL;
+
+ALTER TABLE patients
+MODIFY contact VARCHAR(15);
+
+SELECT * FROM patients;
+
+INSERT INTO patients(patient_name,age, gender, contact, address )
+VALUES("Atharva", 20, "Male","", "Badlapur West");
+
+DELETE FROM patients
+where patient_id=23;
+-- ==================================================
+ALTER TABLE patients
+ADD CONSTRAINT contact UNIQUE (contact);
+
+ALTER TABLE patients
+DROP CONSTRAINT contact;
+
+-- ==================================================
+
+SELECT  *  FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_NAME = 'patients';
+
+SELECT * from appointments
+CROSS JOIN bills;
+
+SELECT * FROM dr_name AS d
+INNER JOIN appointments AS a
+ON d.dr_id!=a._id;
+
+SELECT * FROM appointments
+NATURAL JOIN dr_name;
+
+SELECT b.bill_id, b.bill_date, b.amount, p.patient_name FROM bills AS b
+LEFT JOIN patients AS p
+ON b.patient_id=p.patient_id;
+
+SELECT d.dr_id, d.full_name, a.appointment_id FROM dr_name AS d
+RIGHT JOIN appointments AS a
+ON d.dr_id = a.dr_id;
+
+SELECT p.patient_id, p.patient_name, a.appointment_id, a.appointment_date, a.purpose FROM patients AS p
+LEFT JOIN appointments AS a
+ON p.patient_id = a.patient_id
+UNION
+SELECT p.patient_id, p.patient_name, a.appointment_id, a.appointment_date, a.purpose
+FROM patients AS p
+RIGHT JOIN appointments AS a
+ON p.patient_id = a.patient_id;
+
+
