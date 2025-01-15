@@ -39,6 +39,14 @@ create table dr_name
     FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
 );
 
+ALTER TABLE dr_name 
+MODIFY full_name VARCHAR(30) NOT NULL;
+
+ALTER TABLE dr_name
+MODIFY dept_id INT NOT NULL;
+
+SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME = "dr_name";
+
 INSERT INTO dr_name(full_name, dept_id)
 VALUES ("Sham Singh", 1),
 ("Satendra Joshi", 2),
@@ -59,13 +67,20 @@ create table dr_contact
     contact varchar (15) NOT NULL
 );
 
+ALTER TABLE dr_contact
+ADD CONSTRAINT unique_contact UNIQUE (contact);
+
+-- SELECT * FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME="dr_contact";
+
 INSERT INTO dr_contact(dr_id, contact)
 VALUES(1, "2154874521"),
 (2,"9856325698"),
 (3,8574966589);
 
 CREATE VIEW doctor_info AS
-SELECT dr.dr_id, dr.full_name, dr.dept_id, dc.contact FROM dr_name as dr INNER JOIN dr_contact as dc ON dr.dr_id=dc.dr_id;
+SELECT dr.dr_id, dr.full_name, dr.dept_id, dc.contact FROM dr_name as dr 
+INNER JOIN dr_contact as dc 
+ON dr.dr_id=dc.dr_id;
 
 SELECT * FROM doctor_info;
 
