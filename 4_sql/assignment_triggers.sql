@@ -1,4 +1,5 @@
 -- Trigger assignment
+USE gs;
 
 CREATE TABLE employee(
 	emp_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -21,8 +22,8 @@ CREATE TABLE AuditLog(
 
 
 INSERT INTO employee(name, dept, salary)
-VALUES("charat", "IT", 25000),
-("uganda", "cashier", 22000 );
+VALUES("jusuu", "IT", 25000),
+("ugandaaa", "cashier", 22000 );
 
 SELECT * FROM employee;
 
@@ -33,8 +34,8 @@ AFTER INSERT ON employee
 FOR EACH ROW
 BEGIN
 
-INSERT INTO after_insert(emp_id, name, dept, salary)
-VALUES(NEW.emp_id, NEW.name, NEW.dept, NEW.salary);
+INSERT INTO after_insert(emp_id,action)
+VALUES(NEW.emp_id,"employee created");
 
 END //
 
@@ -49,10 +50,6 @@ INSERT INTO employee(emp_id, name, dept, salary)
 VALUES(3, "sham", "automation", 900000);
 
 DELIMITER //
-
-z
-
-
 
 INSERT INTO employee 
 VALUES(1,"first", "qqq", 1212),
