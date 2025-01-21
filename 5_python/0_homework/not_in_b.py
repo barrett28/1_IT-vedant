@@ -17,5 +17,7 @@ def not_in_b():
         if k not in n2_list:
             not_common.append(k)
             print("element not present in 2nd list are :", not_common)
+        else:
+            print("empty", not_common)
 
 not_in_b()
