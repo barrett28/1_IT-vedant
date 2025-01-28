@@ -118,6 +118,11 @@ nav ul li {
     flex-basis: 30%;
     min-width: 250px;
     margin-bottom: 20px;
+    transition: transform 0.5s;
+}
+
+.col-3:hover{
+    transform: translateY(-5%);
 }
 
 .col-3 img{
@@ -125,9 +130,73 @@ nav ul li {
 }
 
 .small-container{
-    border: 2px solid green;
+    /* background-color: #396a72; */
+    /* border: 2px solid green; */
     max-width: 1080px;
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
 }
+
+
+/* ----------------festured prodcuts---------------- */
+
+.title{
+    text-align: center;
+    /* margin: 0 auto 80px; */
+}
+
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+
+.col-4:hover{
+    transform: translateY(-5%)
+}
+
+.col-4 img{
+    width: 100%;
+}
+
+.rating i{
+    color: orangered;
+}
+
+
+/* -----------------offers------------- */
+
+.offer{
+    /* border: 2px solid green; */
+    background: radial-gradient(#396a72, #000 );
+    margin-top: 80px;
+}
+
+.col-2 small{
+    color: #fff;
+}
+
+.col-2 .offer-img{
+    padding: 50px;
+}
+
+/* ----------------reviews------------- */
+
+.reviews{
+    margin: 80px 0;
+}
+
+.reviews .col-3{
+    text-align: center;
+    padding: 20px;
+}
+
+.reviews .col-3 img{
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+

@@ -1,0 +1,5 @@
+class is a blueprint for creating object that defines the attribute and methods common to all objects for the same type 
+
+
+user define object ko instance kehte hai 
+
