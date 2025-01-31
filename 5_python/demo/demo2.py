@@ -125,7 +125,7 @@
 #         word = input("Enter a word: ").lower()
 
 #         if word in words[level]:  
-#             if word not in enteredwordlist:  # Prevent duplicate words
+#             if word not in enteredwordlist:  
 #                 enteredwordlist.append(word)
 #                 wordcount += 1
 #                 score += 1
@@ -292,7 +292,7 @@ while level < 5:
         else:
             print("\nThanks for playing this game!")
             print(f"Your final score is: {score}")
-            exit()  # Exit the game properly
+            exit()
 
 print("\nThanks for playing this game!")
 print(f"Your final score is: {score}")
