@@ -14,9 +14,7 @@ words = [
     ["can", "hen", "all", "call", "lean", "angle", "challenge"]             
 ]
 
-
 lives, level, score = 5,0,0
-
 while level<5:
     print(f"you are playing level: {level+1}")
     
@@ -37,6 +35,8 @@ while level<5:
                 wordcount +=1
                 print(f"correct {enteredword}")
             else:
+                lives -=1
+                print(f"lives remaining: {lives}")
                 print("you repeated the word, choose something different")
         else:
             print("Wrong guess")
@@ -58,5 +58,5 @@ while level<5:
             level +=1
         else:
             print("thanks for playing the game")
-            print("your final score is {score}")
+            print(f"your final score is {score}")
             exit()
