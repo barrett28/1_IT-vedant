@@ -107,6 +107,7 @@ def doc_info():
         
         for doctor in doctors:
             if doctor["doc_id"]==doc_id:
+                print("enter new detail, if you dont want to change something just press enter")
                 new_doc_name = input(f"Update name: (current name is {doctor["doc_name"]}): ") or doctor["doc_name"]
                 new_doc_age = input(f"Update age: (current age {doctor["doc_age"]}): ") or doctor["doc_age"]
                 new_doc_gender = input(f"Update Gender: (current gender is {doctor["doc_gender"]}): ") or doctor["doc_gender"]
@@ -179,4 +180,4 @@ while True:
         print("Thank You for your time 😊")
         break
     else:
-        print("Invalid choice, please enter valid choice")
+        print("Invalid choice 🫤, please enter valid choice")
