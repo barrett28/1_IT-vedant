@@ -1,3 +1,4 @@
+// @ts-nocheck
 const form = document.querySelector("form");
 const resultDiv = document.querySelector(".result");
 
@@ -7,17 +8,47 @@ form?.addEventListener("submit", (e) => {
 });
 
 const getWordInfo = async (word) => {
-  const response = await fetch(
-    `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-  );
-  const data = await response.json();
+  try {
+    resultDiv.innerHTML = `<p>Fetching data...</p>`;
+    const response = await fetch(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+    );
+    const data = await response.json();
 
-  resultDiv.innerHTML = `
+    resultDiv.innerHTML = `
   <h2> <strong>Word:</strong> ${data[0].word}</h2>
   <p> <strong>Part Of Speech:</strong> ${data[0].meanings[0].partOfSpeech}</p>
-  <p> <strong>Definition:</strong> ${data[0].meanings[0].definitions[0].definition}</p>
-  <p> <strong>Example:</strong> ${data[0].meanings[0].definitions[0].example}</p>
+  <p> <strong>Meaning:</strong> ${
+    data[0].meanings[0].definitions[0].definition === undefined
+      ? "Not Found"
+      : data[0].meanings[0].definitions[0].definition
+  }</p>
+  <p> <strong>Example:</strong> ${
+    data[0].meanings[0].definitions[0].example === undefined
+      ? "Not Found"
+      : data[0].meanings[0].definitions[0].example
+  }</p>
+  <p> <strong>Synonyms: </strong> ${
+    data[0].meanings[0].synonyms === undefined
+      ? "Not Found"
+      : data[0].meanings[0].synonyms
+  }
+  </p>
+  <p class="anto"> <strong>Antonyms: </strong> ${
+    data[0].meanings[0].antonyms === undefined
+      ? "Not Found"
+      : data[0].meanings[0].antonyms
+  }
+  </p>
   `;
+
+    // for (let i=0; i<data[0].meanings[0].definitions[0].)
+
+    //adding source url
+    resultDiv.innerHTML += `<a href="${data[0].sourceUrls}" target="_blank">Read More</a>`;
+  } catch {
+    resultDiv.innerHTML = `<p>Word could not be found</p>`;
+  }
   console.log(data);
 };
 

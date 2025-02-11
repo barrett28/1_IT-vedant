@@ -44,7 +44,7 @@ main form{
     align-items: center;
 }
 
-form input[type="text"], form button[type="submit"]{
+form input[type="text"], form button[type="submit"], .result a{
     border: 2px solid black;
     font-size: 16px;
     padding: calc(var(--padding)/2);
@@ -93,11 +93,35 @@ footer{
     margin-bottom: 0px;
 }
 
-/* .result{
-    display: none;
-    margin-top: 30px;
-    background-color: #dcf5f5;
-    border: 2px solid black;
-    border-radius: var(--bor-radius);
+.result{
+    background-color: #fff;
     padding: var(--padding);
-} */
+    border-radius: var(--bor-radius);
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px black;
+}
+
+.result p{
+    margin-top: 10px;
+}
+
+.result p[class="anto"]{
+    margin-bottom: 25px;
+}
+
+.result a{
+    text-decoration: none;
+    background-color: var(--header-color);
+    color: #fff;
+}
+
+@media screen and (max-width:310px) {
+    main form {
+        flex-direction: column;
+    }
+    form button[type="submit"]{
+        margin-left: 0;
+        margin-top: 10px;
+        width: 80%;
+    }
+}
