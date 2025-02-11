@@ -92,3 +92,12 @@ footer{
     padding: calc(var(--padding)/1.32);
     margin-bottom: 0px;
 }
+
+/* .result{
+    display: none;
+    margin-top: 30px;
+    background-color: #dcf5f5;
+    border: 2px solid black;
+    border-radius: var(--bor-radius);
+    padding: var(--padding);
+} */
