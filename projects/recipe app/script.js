@@ -7,7 +7,7 @@ const fetchRecipes = async (query) => {
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
   );
   const response = await data.json();
-  console.log(response);
+  console.log(response.meals[0]);
 };
 
 searchBtn?.addEventListener("click", (e) => {
