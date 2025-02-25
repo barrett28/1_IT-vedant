@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
+    <title>List page</title>
+  </head>
+  <body>
+    <h2>Marvel Table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Heroic Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for m in mf %}
+        <tr>
+          <td>{{ m.name }}</td>
+          <td>{{ m.heroic_name }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Dc Table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Heroic Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for d in dc %}
+        <tr>
+          <td>{{ d.name }}</td>
+          <td>{{ d.heroic_name }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="/"> <button>GO to home</button> </a>
+
+    <script src="{% static 'core/js/jquery.js' %}"></script>
+    <script src="{% static 'core/js/popper.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

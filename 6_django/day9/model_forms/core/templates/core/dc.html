@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dc Page</title>
+  </head>
+  <body>
+    <h1>Dc Form</h1>
+
+    <form action="" method="POST">
+      {% csrf_token %} {{dc.as_p}}
+      <input type="submit" />
+    </form>
+
+    <a href="/"> <button>GO home</button> </a>
+  </body>
+</html>
