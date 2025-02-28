@@ -5,23 +5,127 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* body {
+    min-height: 100vh;
+    background-image: url(../images/asset-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #eeeeea;
+    
+} */
+
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
     background-color: #eeeeea;
 }
+/* =====navbar==== */
 
-.wrapper {
+.left-right-margin{
+    background-image: url(../images/asset-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+
+}
+
+nav{
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+/* nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    position: relative; 
+    z-index: 10;
+} */
+
+
+.leftsection img{
+    width: 170px;
+}
+
+.leftsection a{
+    text-decoration: none;
+    color: #000;
+}
+
+.leftsection h3{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.leftsection h3{
+    font-size: 35px;
+}
+
+.rightsection{
+    margin-right: 40px;
+}
+
+.rightsection ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.rightsection li{
+    list-style: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.rightsection li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.rightsection a:hover{
+    background-color: #f0f0f0;
+}
+
+
+
+
+/* ==== wrapper=== */
+/* .wrapper {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+} */
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; 
+    padding-bottom: 50px;
 }
 
 .container {
     height: 400px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: center;
 }
 
 .card {
