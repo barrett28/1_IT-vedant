@@ -27,27 +27,39 @@
       </nav>
     </div>
 
-    {% comment %} =========slider container========= {% endcomment %}
-    
-    <div class="overall-container">
-      <div class="slider-container">
-        <div class="slider-wrapper">
-          <div id="slide-1"class="slider">
-            <img  src=" {% static "core/images/asset-9.png" %} " alt="asset-9">
-            <img id="slide-2" src="{% static "core/images/asset-11.png" %}" alt="asset-11">
-            <img id="slide-3" src="{% static "core/images/asset-13.png" %}" alt="asset-13">
-          </div>
-          <div class="slider-nav">
-            <a href="#slider-1"></a>
-            <a href="#slider-2"></a>
-            <a href="#slider-3"></a>
-          </div>
+    {% comment %} ======tilted============== {% endcomment %}
+
+    <div class="tilted-container">
+      <div class="tilt-2">
+        <div class="tilt-text">
+          <h3>New Arrivals</h3>
+          <p>Shop new carry-on luggage to backpacks. <br> Freshen up your next trip with the latest in luggage and travel gear.</p>
+          <button type="submit">Shop Now</button>
+        </div>
+        <div class="img-section">
+          <img src="{% static "core/images/asset-55-flip.png" %}" alt="tilted-1">
+        </div>
+      </div>
+      <div class="tilt-1">
+        <div class="img-section">
+          <img src="{% static "core/images/asset-54.png" %}" alt="tilted-1">
+        </div>
+        <div class="tilt-text">
+          <h3>Best Seller</h3>
+          <p>Shop BragBags's best-sellers online. Discover the most popular, <br> top-rated travel gear handpicked by BragBags fans!</p>
+          <button type="submit">Shop Now</button>
         </div>
       </div>
     </div>
 
-    {% comment %} =====2nd slider==== {% endcomment %}
-    {% comment %} <div id="carouselExampleDark" class="carousel carousel-dark slide">
+
+    {% comment %} ====different item section===== {% endcomment %}
+
+    <div class="hero-container"></div>
+
+
+    {% comment %} ===== slider==== {% endcomment %}
+    {% comment %} <div id="carouselExampleDark" class="carousel carousel-dark slide ca-margin">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -55,25 +67,16 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="10000">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
+          <a href="/"> <img src="{% static "core/images/asset-9.png" %}" class="d-block w-100" alt="..."></a>
+          
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
+          <img src="{% static "core/images/asset-11.png" %}" class="d-block w-100" alt="...">
+          
         </div>
         <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
+          <img src="{% static "core/images/asset-13.png" %}" class="d-block w-100" alt="...">
+          
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -86,80 +89,113 @@
       </button>
     </div> {% endcomment %}
 
-    <h1>This is below nav</h1>
+
+    {% comment %} ==========tilted section================ {% endcomment %}
+
+
+
+   
     <div class="wrapper">
       <div class="container">
           <input type="radio" name="slide" id="c1" checked>
           <label for="c1" class="card">
               <div class="row">
-                  {% comment %} <div class="icon">1</div> {% endcomment %}
-                  {% comment %} <div class="description">
-                      <h4>BackPacks</h4>
-                      
-                  </div> {% endcomment %}
+                  <div class="text-section">
+                    <h4>Trendy Backpacks <br> and many more</h4>
+                    <button type="submit">Explore more</button>
+                  </div>
+
               </div>
           </label>
           <input type="radio" name="slide" id="c2" >
           <label for="c2" class="card">
               <div class="row">
-                  {% comment %} <div class="icon">2</div> {% endcomment %}
-                  {% comment %} <div class="description">
-                      <h4>Classic Duffler</h4>
-                      
-                  </div> {% endcomment %}
+                <div class="text-section">
+                  <h4>Cool Duffle Bags <br> and many more</h4>
+                  <button type="submit">Explore more</button>
+                </div>
               </div>
           </label>
           <input type="radio" name="slide" id="c3" >
           <label for="c3" class="card">
               <div class="row">
-                  {% comment %} <div class="icon">3</div> {% endcomment %}
-                  {% comment %} <div class="description">
-                      <h4>Iconic BagPacks</h4>
-                      
-                  </div> {% endcomment %}
+                <div class="text-section">
+                  <h4>Trendy Backpacks <br> and many more</h4>
+                  <button type="submit">Explore more</button>
+                </div>
               </div>
           </label>
           <input type="radio" name="slide" id="c4" >
           <label for="c4" class="card">
               <div class="row">
-                  {% comment %} <div class="icon">4</div> {% endcomment %}
-                  {% comment %} <div class="description">
-                      <h4>Trendy Duffler</h4>
-                  </div> {% endcomment %}
+                <div class="text-section">
+                  <h4>Sporty BymBags <br> and many more</h4>
+                  <button type="submit">Explore more</button>
+                </div>
               </div>
           </label>
       </div>
   </div>
+
+  {% comment %} ============footer================ {% endcomment %}
+
+  <footer>
+    <div class="get-update">
+      <div class="left-section">
+        <h1>STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS</h1>
+      </div>
+      <div class="right-section">
+        <input type="text" name="" id="" placeholder="enter name">
+        <input type="email" name="" id="" placeholder="enter email">
+        <br>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+    <div class="last-banner">
+      <div class="section-1">
+        <h3>BragBags</h3>
+        <p>We have bags that suits your style from wide range of category</p>
+        <div class="icons">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+      </div>
+      <div class="section-2">
+        <h5 id="link-word">Links</h5>
+        <a href="/">Home</a>
+        <a href="/">About Us</a>
+        <a href="/">Contact</a>
+        <a href="/">Login</a>
+      </div>
+      <div class="section-3">
+        <h5 id="link-word">Help</h5>
+        <a href="/">Terms & conditions</a>
+        <a href="/">Privacy Policy</a>
+        <a href="/">Customer Service</a>
+      </div>
+      <div class="section-4">
+        <h5 id="link-word">FAQ</h5>
+        <a href="/">Account</a>
+        <a href="/">Manage Deliveries</a>
+        <a href="/">Orders</a>
+        <a href="/">Payments</a>
+      </div>
+    </div>
+    <hr>
+    <div class="coprwrite">
+      <p>BragBags.co &copy; 2025, All Rights Reserved</p>
+    </div>
+  </footer>
 
 
 
     <script src="{% static "core/js/jquery.js" %}"></script>
     <script src="{% static "core/js/popper.js" %}"></script>
     <script src="{% static "core/js/bootstrap.min.js" %}"></script>
+    <script src="https://kit.fontawesome.com/154c2a8c03.js" crossorigin="anonymous"></script>
 
   </body>
 </html>
 
-{% comment %} <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
-{% endcomment %}
