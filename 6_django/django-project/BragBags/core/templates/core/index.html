@@ -55,7 +55,30 @@
 
     {% comment %} ====different item section===== {% endcomment %}
 
-    <div class="hero-container"></div>
+    <div class="product-container">
+      <div class="product-types">
+        <div class="type-1">
+          <img src="{% static "core/images/asset-13.jpeg" %}" alt="asset13">
+          <a href=""> <p>Explore More &gt; </p> </a>
+          {% comment %} <p>Suitcases</p> {% endcomment %}
+        </div>
+        <div class="type-2">
+          <a href=""> <p>Explore More &gt; </p> </a>
+          <img src="{% static "core/images/asset-17.jpeg" %}" alt="asset17">
+          {% comment %} <p>Explore Our Handbags</p> {% endcomment %}
+        </div>
+        <div class="type-3">
+          <img src="{% static "core/images/asset-28.jpeg" %}" alt="asset17">
+          <a href=""> <p>Explore More &gt; </p> </a>
+          {% comment %} <p>Explore Our BackPacks</p> {% endcomment %}
+        </div>
+        <div class="type-4">
+          <a href=""> <p>Explore More &gt; </p> </a>
+          <img src="{% static "core/images/asset-17.jpeg" %}" alt="asset17">
+          {% comment %} <p>Explore Our Tote Bags</p> {% endcomment %}
+        </div>
+      </div>
+    </div>
 
 
     {% comment %} ===== slider==== {% endcomment %}
@@ -137,6 +160,25 @@
       </div>
   </div>
 
+
+  {% comment %} ===============slideshow========= {% endcomment %}
+
+  <div class="slide-container">
+    <div class="slide-full-cont">
+      <div class="slideshow-cont">
+        <img class="slide active" src="{% static "core/images/asset-21.jpeg" %}" alt="asset21">
+        <img class="slide" src="{% static "core/images/asset-22.jpeg" %}" alt="asset22">
+        <img class="slide" src="{% static "core/images/asset-24.jpeg" %}" alt="asset24">
+        <img class="slide" src="{% static "core/images/asset-37.jpeg" %}" alt="asset37">
+      </div>
+      <div class="text-desc">
+        <h4>CheckOut Our Popular Products</h4>
+        <button>Explore Popular</button>
+      </div>
+    </div>
+  </div>
+
+
   {% comment %} ============footer================ {% endcomment %}
 
   <footer>
@@ -195,6 +237,21 @@
     <script src="{% static "core/js/popper.js" %}"></script>
     <script src="{% static "core/js/bootstrap.min.js" %}"></script>
     <script src="https://kit.fontawesome.com/154c2a8c03.js" crossorigin="anonymous"></script>
+
+    <script>
+      let slides = document.querySelectorAll(".slide");
+      let currentIndex = 0;
+
+      function showSlides() {
+          slides.forEach(slide => slide.classList.remove("active"));
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add("active");
+      }
+
+      setInterval(showSlides, 2000); // Change image every 0.5s
+  </script>
+
+
 
   </body>
 </html>
