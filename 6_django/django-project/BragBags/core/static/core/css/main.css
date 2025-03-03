@@ -376,11 +376,12 @@ input:checked + label .description {
 }
 
 .slide-full-cont{
-    width: 60%;
+    width: 100%;
     padding: 20px;
     /* border: 2px solid black; */
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .slideshow-cont{
@@ -413,10 +414,42 @@ input:checked + label .description {
     flex-direction: column;
 }
 
-
 .text-desc button{
     padding: 8px;
     border-radius: 20px;
+}
+
+.parent-grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.parent-grid .div1{
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+}
+
+.parent-grid .div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.parent-grid .div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.parent-grid .div4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 4;
 }
 
 /* ==============footer ============= */
