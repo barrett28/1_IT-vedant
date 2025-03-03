@@ -131,7 +131,7 @@ nav{
     text-align: start;
 }
 
-.tilt-1 .tilt-text h3{
+.tilt-1 .tilt-text h3, .tilt-2 .tilt-text h3{
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 40px;
@@ -157,6 +157,8 @@ nav{
     text-align: start;
     z-index: 1;
 }
+
+
 
 /* =============hero container========== */
 
