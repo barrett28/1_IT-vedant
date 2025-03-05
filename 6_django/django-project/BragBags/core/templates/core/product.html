@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/product.css" %}">
+    <title>Document</title>
+  </head>
+  <body>
+    {% comment %} <h1>product page</h1> {% endcomment %}
+
+    <div class="left-right-margin">
+        <nav>
+          <div class="leftsection">
+            {% comment %} <a href="/"><img src="{% static "core/images/new-logo.png" %}" alt=""></a> {% endcomment %}
+            <a href="/"> <h3>BragBags</h3></a>
+          </div>
+          <div class="rightsection">
+            <ul>
+                <li> <a href="/">Home</a> </li>
+                <li> <a href="#">About Us</a> </li>
+                <li> <a href="#">Contact Us</a> </li>
+                <li> <a href="#">Login</a> </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+
+
+      {% comment %} ====product------ {% endcomment %}
+    
+
+    <div class="product-container">
+        <div class="left-section">
+            <img src="{% static "core/images/asset_13.png" %}" alt="">
+            <h4>Best Seller</h4>
+        </div>
+        <div class="right-section">
+            <div class="name">
+                <p>BragBags- Small Cabin Suitcase (55cm) 4 Wheels - Fury 55 - Teal</p>
+                {% comment %} <p>Small Cabin Suitcase (55cm) 4 Wheels - Fury 55 - Teal</p> {% endcomment %}
+            </div>
+            <div class="price">
+                <p>Special Price</p>
+                <h3>&#8377; 1499</h3> <span>&#8377; 1899</span>
+            </div>
+            <div class="rating">
+                <p>4.3 <i class="fa-regular fa-star"></i></p> <span>5,232 ratings and 2,451 reviews</span>
+            </div>
+            <div class="buttons">
+                <button class="b1">Buy Now</button>
+                <button class="b2">Add to Cart</button>
+            </div>
+
+            <div class="product-desc">
+              <h4>Product Description</h4>
+              <p>Travel in Style & Comfort! This lightweight yet durable suitcase is designed to be your 
+                  perfect travel companion. <br> Whether it's a weekend getaway or a long vacation, this suitcase ensures a hassle-free journey.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="backhome">
+        <a href="/"> <button>Back to home page</button></a>
+    </div>
+
+    <div class="checkout-similar">
+        <div class="top-text">
+            <h3>CheckOut Similar Products &darr;</h3>
+        </div>
+        <div class="similar-items">
+          <div class="images-list">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static "core/images/asset-28.jpeg" %}" class="card-img-top" alt="asset-28">
+            </div>
+          </div>
+          <div class="images-list">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static "core/images/asset-37.jpeg" %}" class="card-img-top" alt="asset-28">
+            </div>
+          </div>
+          <div class="images-list">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static "core/images/asset 23.jpeg" %}" class="card-img-top" alt="asset-28">
+            </div>
+          </div>
+          <div class="images-list">
+            <div class="card" style="width: 18rem;">
+              <img src="{% static "core/images/asset-21.jpeg" %}" class="card-img-top" alt="asset-28">
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="get-update">
+          <div class="left-section">
+            <h1>STAY UPTO DATE ABOUT <br> OUR LATEST OFFERS</h1>
+          </div>
+          <div class="right-section">
+            <input type="text" name="" id="" placeholder="enter name">
+            <input type="email" name="" id="" placeholder="enter email">
+            <br>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+        <div class="last-banner">
+          <div class="section-1">
+            <h3>BragBags</h3>
+            <p>We have bags that suits your style from wide range of category</p>
+            <div class="icons">
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+            </div>
+          </div>
+          <div class="section-2">
+            <h5 id="link-word">Links</h5>
+            <a href="/">Home</a>
+            <a href="/">About Us</a>
+            <a href="/">Contact</a>
+            <a href="/">Login</a>
+          </div>
+          <div class="section-3">
+            <h5 id="link-word">Help</h5>
+            <a href="/">Terms & conditions</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Customer Service</a>
+          </div>
+          <div class="section-4">
+            <h5 id="link-word">FAQ</h5>
+            <a href="/">Account</a>
+            <a href="/">Manage Deliveries</a>
+            <a href="/">Orders</a>
+            <a href="/">Payments</a>
+          </div>
+        </div>
+        <hr>
+        <div class="coprwrite">
+          <p>BragBags.co &copy; 2025, All Rights Reserved</p>
+        </div>
+      </footer>
+
+    <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script>
+    <script src="{% static "core/js/bootstrap.min.js" %}"></script>
+    <script src="https://kit.fontawesome.com/154c2a8c03.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>
