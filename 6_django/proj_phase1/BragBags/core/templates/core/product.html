@@ -1,0 +1,67 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="product-container">
+  <div class="left-section">
+    <img src="{% static "core/images/asset_13.png" %}" alt="BragBags Small Cabin
+    Suitcase">
+    <h4>Best Seller</h4>
+  </div>
+  <div class="right-section">
+    <div class="name">
+      <p>BragBags- Small Cabin Suitcase (55cm) 4 Wheels - Fury 55 - Teal</p>
+    </div>
+    <div class="price">
+      <p>Special Price</p>
+      <h3>&#8377; 1499</h3>
+      <span>&#8377; 1899</span>
+    </div>
+    <div class="rating">
+      <p>4.3 <i class="fa-regular fa-star"></i></p>
+      <span>5,232 ratings and 2,451 reviews</span>
+    </div>
+    <div class="buttons">
+      <button class="b1">Buy Now</button>
+      <button class="b2">Add to Cart</button>
+    </div>
+    <div class="product-desc">
+      <h4>Product Description</h4>
+      <p>
+        Travel in Style & Comfort! This lightweight yet durable suitcase is
+        designed to be your perfect travel companion. <br />
+        Whether it's a weekend getaway or a long vacation, this suitcase ensures
+        a hassle-free journey.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="backhome">
+  <a href="/"> <button>Back to home page</button></a>
+  <a href="/suitcat/"> <button>Back to Category page</button></a>
+</div>
+
+<div class="checkout-similar">
+  <div class="top-text">
+    <h3>CheckOut Similar Products &darr;</h3>
+  </div>
+  <div class="similar-items">
+    <div class="card">
+      <img src="{% static "core/images/asset-28.jpeg" %}" alt="Similar Product
+      1">
+    </div>
+    <div class="card">
+      <img src="{% static "core/images/asset-37.jpeg" %}" alt="Similar Product
+      2">
+    </div>
+    <div class="card">
+      <img src="{% static "core/images/asset 23.jpeg" %}" alt="Similar Product
+      3">
+    </div>
+    <div class="card">
+      <img src="{% static "core/images/asset-21.jpeg" %}" alt="Similar Product
+      4">
+    </div>
+  </div>
+</div>
+{% comment %} <a href="/"><button>Go to home page</button></a> {% endcomment %}
+{% endblock content %}
