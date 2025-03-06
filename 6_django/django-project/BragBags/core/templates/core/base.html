@@ -3,14 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "core/css/main.css" %}"> <link
+    rel="stylesheet" href="{% static "core/css/product.css" %}">
     <title>{% block title %}My Website{% endblock %}</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    {% include 'navbar.html' %}
-
-    <main>{% block content %} {% endblock %}</main>
-
-    {% include 'footer.html' %}
+    {% block Navbar %} {% include "navbar2.html" %} {% endblock Navbar %}
   </body>
 </html>

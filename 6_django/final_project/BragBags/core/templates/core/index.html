@@ -1,0 +1,115 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<!-- Tilted Container Section -->
+<div class="tilted-container">
+  <div class="tilt-1">
+    <div class="img-section">
+      <img src="{% static "core/images/asset-54.png" %}" alt="tilted-1">
+    </div>
+    <div class="tilt-text">
+      <h3>Best Seller</h3>
+      <p>
+        Shop BragBags's best-sellers online. Discover the most popular, <br />
+        top-rated travel gear handpicked by BragBags fans!
+      </p>
+      <button type="submit">Shop Now</button>
+    </div>
+  </div>
+  <div class="tilt-2">
+    <div class="tilt-text">
+      <h3>New Arrivals</h3>
+      <p>
+        Shop new carry-on luggage to backpacks. <br />
+        Freshen up your next trip with the latest in luggage and travel gear.
+      </p>
+      <button type="submit">Shop Now</button>
+    </div>
+    <div class="img-section">
+      <img src="{% static "core/images/asset-55-flip.png" %}" alt="tilted-1">
+    </div>
+  </div>
+</div>
+
+<!-- product category cintainer -->
+
+<div class="product-container">
+  <div class="product-types">
+    <div class="type-1">
+      <a href="suitcat/">
+        <img src="{% static "core/images/asset-13.jpeg" %}" alt="asset13"></a
+      >
+      <a href=""> <p>Explore More &gt;</p> </a>
+    </div>
+    <div class="type-2">
+      <a href=""> <p>Explore More &gt;</p> </a>
+      <img src="{% static "core/images/asset-17.jpeg" %}" alt="asset17">
+    </div>
+    <div class="type-3">
+      <img src="{% static "core/images/asset-28.jpeg" %}" alt="asset17">
+      <a href=""> <p>Explore More &gt;</p> </a>
+    </div>
+    <div class="type-4">
+      <a href=""> <p>Explore More &gt;</p> </a>
+      <img src="{% static "core/images/asset-17.jpeg" %}" alt="asset17">
+    </div>
+  </div>
+</div>
+
+<!-- wrapper label -->
+
+<div class="wrapper">
+  <div class="container">
+    <input type="radio" name="slide" id="c1" checked />
+    <label for="c1" class="card">
+      <div class="row">
+        <div class="text-section">
+          <h4>
+            Trendy Backpacks <br />
+            and many more
+          </h4>
+          <button type="submit">Explore more</button>
+        </div>
+      </div>
+    </label>
+    <input type="radio" name="slide" id="c2" />
+    <label for="c2" class="card">
+      <div class="row">
+        <div class="text-section">
+          <h4>
+            Cool Duffle Bags <br />
+            and many more
+          </h4>
+          <button type="submit">Explore more</button>
+        </div>
+      </div>
+    </label>
+    <input type="radio" name="slide" id="c3" />
+    <label for="c3" class="card">
+      <div class="row">
+        <div class="text-section">
+          <h4>
+            Trendy Backpacks <br />
+            and many more
+          </h4>
+          <button type="submit">Explore more</button>
+        </div>
+      </div>
+    </label>
+    <input type="radio" name="slide" id="c4" />
+    <label for="c4" class="card">
+      <div class="row">
+        <div class="text-section">
+          <h4>
+            Sporty BymBags <br />
+            and many more
+          </h4>
+          <button type="submit">Explore more</button>
+        </div>
+      </div>
+    </label>
+  </div>
+</div>
+
+<!-- js slideshow -->
+
+{% endblock content %}

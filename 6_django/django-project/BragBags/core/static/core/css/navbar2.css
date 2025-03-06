@@ -1,0 +1,56 @@
+.navbar-container {
+    background: #fff; /* Plain white background */
+    height: auto;
+    padding: 10px 0;
+}
+
+nav {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for separation */
+}
+
+.leftsection a {
+    text-decoration: none;
+    color: #000;
+}
+
+.leftsection h3 {
+    font-family: "Grape Nuts", cursive;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+.rightsection {
+    margin-right: 40px;
+}
+
+.rightsection ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.rightsection li {
+    list-style: none;
+}
+
+.rightsection li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.rightsection a:hover {
+    background-color: #f0f0f0;
+}
