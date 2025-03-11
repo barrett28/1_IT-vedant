@@ -1,0 +1,41 @@
+{% comment %} {% extends "core/base.html" %} {% load static %} {% block content
+%}
+<h2>Your Cart</h2>
+
+<div class="outer_side_cart">
+  <div class="cart-container">
+    {% for item in cart_items %}
+    <div class="cart-item">
+      <img
+        src="{{ item.image.url }}"
+        alt="{{ item.name }}"
+        class="cart-item-image"
+      />
+      <div class="cart-item-details">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+        <p>Price: ₹{{ item.price }}</p>
+
+        <div class="quantity-control">
+          <button
+            class="decrease-btn"
+            onclick="updateQuantity('{{ item.id }}', 'decrease')"
+          >
+            -
+          </button>
+          <span id="quantity-{{ item.id }}">{{ item.quantity }}</span>
+          <button
+            class="increase-btn"
+            onclick="updateQuantity('{{ item.id }}', 'increase')"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <p>Your cart is empty.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %} {% endcomment %}

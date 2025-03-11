@@ -1,0 +1,18 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<h1>Register here</h1>
+
+<form action="" method="POST" novalidate>
+  <!-- FROM csrf LOAD-->
+
+  {% csrf_token %}
+
+  <!-- FROM CONTENT LOAD-->
+  {{ mf.as_p }}
+
+  <input type="submit" value="Register" />
+</form>
+
+<!---->
+
+{% endblock content %}
