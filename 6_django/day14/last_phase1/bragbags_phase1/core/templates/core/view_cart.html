@@ -1,0 +1,48 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="main">
+  <div class="viewcart_title">
+    <h1>{{request.user}} Cart</h1>
+  </div>
+  {% for item in cart_items %}
+
+  <div id="view_box">
+    <div class="main-viewbox">
+      <div class="viewcart-image">
+        <img
+          src="{{ item.product.luggage_image.url }}"
+          alt="luggae cart image"
+        />
+      </div>
+
+      <div class="viewcart-name">
+        <h3>{{item.product.name}}</h3>
+      </div>
+
+      <div class="dec-counter">
+        <a href="{% url "del_quantity" item.id %}"><i class="fa-solid fa-minus"></i></a>
+      </div>
+
+      <div class="qunatity_item">{{item.quantity}}</div>
+
+      <div class="add-counter">
+        <a href="{% url "add_quantity" item.id %}"><i class="fa-solid fa-plus"></i></a>
+      </div>
+
+      <div class="viewcart-price">
+        <h5><strong>&#8377;{{ item.total_price|floatformat:2 }}</strong></h5>
+      </div>
+
+      <div class="delete_icon">
+        <a href="{% url "deletecartitem" item.id %}"><i class="fa-solid fa-trash"></i></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="pay-button">
+    <a href=""><button class="pay_button">Proceed to Pay</button></a>
+  </div>
+</div>
+
+{% endblock content %}

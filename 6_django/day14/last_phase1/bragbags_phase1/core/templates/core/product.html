@@ -26,7 +26,7 @@
     {% endcomment %}
     <div class="buttons">
       <button class="b1">Buy Now</button>
-      <button class="b2">Add to Cart</button>
+      <a href="{% url "addtocart" sc.id %}"> <button class="b2">Add to Cart</button></a>
     </div>
     <div class="product-desc">
       <h4><b> Product Description </b></h4>
