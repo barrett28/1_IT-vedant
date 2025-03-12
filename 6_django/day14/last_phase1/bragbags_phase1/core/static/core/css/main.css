@@ -452,6 +452,7 @@ footer{
     border-radius: 10px;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -467,6 +468,7 @@ footer .get-update .left-section h1{
 .get-update .right-section{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: end;
 }
 
@@ -482,6 +484,7 @@ footer .get-update .left-section h1{
     margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     /* justify-content: space-between; */
     gap: 150px;
 }

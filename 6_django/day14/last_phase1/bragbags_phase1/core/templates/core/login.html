@@ -1,6 +1,8 @@
 {% extends "core/base.html" %} {% load static %} {% block content %}
 
-<h1>login here</h1>
+<div class="login-title">
+  <h1>login here</h1>
+</div>
 
 <form action="" method="POST">
   {% csrf_token %} {{mf.as_p}}
