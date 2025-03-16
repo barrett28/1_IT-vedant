@@ -182,3 +182,15 @@ def delete_cart_item(request, id):
         return redirect('viewcart')
     else:
         return redirect('login')
+    
+def summary(request):
+    if request.user.is_authenticated:
+        cart_item = Cart.objects.filter(user=request.user)
+        total=0
+        delivery_charge = 2000
+        for item in cart_item:
+            total += (item.product.discounted_price*item.quantity)
+        final_price = total+delivery_charge
+        return render(request, 'core/summary.html', {'cart_item':cart_item, 'total':total, 'final_price':final_price})
+    else:
+        return redirect('login')

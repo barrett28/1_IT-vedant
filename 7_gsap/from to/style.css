@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+#box, #box1{
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+}
