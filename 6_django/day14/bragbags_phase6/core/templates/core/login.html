@@ -1,0 +1,13 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="login-title">
+  <h1>login here</h1>
+</div>
+
+<form action="" method="POST">
+  {% csrf_token %} {{mf.as_p}}
+
+  <input type="submit" />
+</form>
+
+{% endblock content %}

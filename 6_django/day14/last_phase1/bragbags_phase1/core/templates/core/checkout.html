@@ -1,0 +1,79 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="checkout-container">
+  <div class="check-heading">
+    <h1>CheckOut Page</h1>
+  </div>
+
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart_items %}
+        <tr>
+          <td>{{ item.product.name }}</td>
+          <td>₹{{ item.product.discounted_price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>₹{{item.price_and_quantity_total}}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td colspan="3" class="text-right"><strong>Subtotal</strong></td>
+          <td>₹{{ total }}</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="text-right"><strong>Shipping</strong></td>
+          <td>₹200</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="text-right"><strong>Final Total</strong></td>
+          <td><b>₹{{ final_price }}</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="add-box">
+    <div class="all-add">
+      {% for ad in address %}
+      <label class="address-label">
+        <input
+          type="radio"
+          name="address"
+          value="{{ ad.id }}"
+          class="address-radio"
+        />
+        <div class="address-card">
+          <div class="add-name">
+            <h3>{{ ad.name }}</h3>
+          </div>
+          <p><strong>Address:</strong> {{ ad.address }}</p>
+          <p><strong>City:</strong> {{ ad.city }}</p>
+          <p><strong>State:</strong> {{ ad.state }}</p>
+          <p><strong>Pincode:</strong> {{ ad.pincode }}</p>
+
+          <div class="add-del">
+            <a href="{% url 'deleteaddress' ad.id %}">
+              <button>Delete Address</button>
+            </a>
+          </div>
+        </div>
+      </label>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="payment-button">
+    <a href="{% url "payment" %}"><button>Pay</button></a>
+  </div>
+</div>
+
+{% endblock content %}

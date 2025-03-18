@@ -1,0 +1,17 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="summary-container">
+  <div class="summ-title">
+    <h1>this is summary page</h1>
+  </div>
+
+  {% for item in cart_item %}
+  <div class="sum_box">
+    <div class="sum_total">
+      <p>{{final_price}}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

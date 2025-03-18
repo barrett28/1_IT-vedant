@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Luggage, Cart
+from .models import Luggage, Cart, CustomerDetail, Order
 from django.db.models import Sum
-from .forms import  AdminProfileForm, RegistrationForm, UserProfileForm, ChangePasswordForm
+from .forms import  AdminProfileForm, RegistrationForm, UserProfileForm, ChangePasswordForm, CustomerForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout,update_session_auth_hash
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
+
+# -------for paypal-------------
+from paypal.standard.forms import PayPalPaymentsForm
+from django.conf import settings
+import uuid
+from django.urls import reverse
 
 # Create your views here.
 
@@ -145,9 +152,6 @@ def add_to_cart(request, id):
 def view_cart(request):
     if request.user.is_authenticated:
         cart_items = Cart.objects.filter(user=request.user) 
-        for item in cart_items:               # total price calculation
-            item.total_price = item.product.discounted_price * item.quantity
-        
         return render(request, 'core/view_cart.html', {'cart_items': cart_items})
     else:
         return redirect('login')
@@ -183,14 +187,115 @@ def delete_cart_item(request, id):
     else:
         return redirect('login')
     
-def summary(request):
+# def summary(request):
+#     if request.user.is_authenticated:
+#         cart_item = Cart.objects.filter(user=request.user)
+#         total=0
+#         delivery_charge = 2000
+#         for item in cart_item:
+#             total += (item.product.discounted_price*item.quantity)
+#         final_price = total+delivery_charge
+#         return render(request, 'core/summary.html', {'cart_item':cart_item, 'total':total, 'final_price':final_price})
+#     else:
+#         return redirect('login')
+
+
+# ---------------------------------
+
+def address(request):
     if request.user.is_authenticated:
-        cart_item = Cart.objects.filter(user=request.user)
-        total=0
-        delivery_charge = 2000
-        for item in cart_item:
-            total += (item.product.discounted_price*item.quantity)
-        final_price = total+delivery_charge
-        return render(request, 'core/summary.html', {'cart_item':cart_item, 'total':total, 'final_price':final_price})
+        if request.method == 'POST':
+            ad = CustomerForm(request.POST)
+            if ad.is_valid():
+                user = request.user
+                name = ad.cleaned_data['name']
+                address = ad.cleaned_data['address']
+                city = ad.cleaned_data['city']
+                state = ad.cleaned_data['state']
+                pincode = ad.cleaned_data['pincode']
+                
+                CustomerDetail(user=user,name=name,address=address,city=city,state=state,pincode=pincode).save()
+                return redirect('address')
+        else:
+            ad = CustomerForm()
+            address = CustomerDetail.objects.filter(user=request.user)
+        return render(request, 'core/address.html', {'ad':ad, 'address':address})
     else:
         return redirect('login')
+    
+    
+def delete_address(request,id):
+        de = CustomerDetail.objects.get(pk=id)
+        de.delete()
+        return redirect('address')
+    
+    
+# ---------------------
+
+def checkout(request):
+    if request.user.is_authenticated:
+        cart_items = Cart.objects.filter(user=request.user)
+        total = 0
+        delivery_charges = 200
+        for item in cart_items:               # total price calculation
+            total += (item.product.discounted_price * item.quantity)
+            final_price = total+delivery_charges
+        address = CustomerDetail.objects.filter(user=request.user)
+        return render(request, 'core/checkout.html', {'cart_items':cart_items, 'total':total, 'final_price':final_price, 'address':address})
+    
+    
+# ===================
+
+def payment(request):
+
+    if request.method=='POST':
+        selected_address_id = request.POST.get('selected_address')
+        print('=========',selected_address_id)
+    cart_items = Cart.objects.filter(user=request.user)      # cart_items will fetch product of current user, and show product available in the cart of the current user.
+    total =0
+    delhivery_charge =200
+    for item in cart_items:
+        item.product.price_and_quantity_total = item.product.discounted_price * item.quantity
+        total += item.product.price_and_quantity_total
+    final_price= delhivery_charge + total
+    
+    address = CustomerDetail.objects.filter(user=request.user)
+  
+        #============== Paypal Code =====================
+   
+    host = request.get_host()   # Will fecth the domain site is currently hosted on.
+   
+    paypal_checkout = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,   #This is typically the email address associated with the PayPal account that will receive the payment.
+        'amount': final_price,    #: The amount of money to be charged for the transaction. 
+        'item_name': 'Luggage',       # Describes the item being purchased.
+        'invoice': uuid.uuid4(),  #A unique identifier for the invoice. It uses uuid.uuid4() to generate a random UUID.
+        'currency_code': 'USD',
+        'notify_url': f"http://{host}{reverse('paypal-ipn')}",         #The URL where PayPal will send Instant Payment Notifications (IPN) to notify the merchant about payment-related events
+        'return_url': f"http://{host}{reverse('paymentsuccess',args=[selected_address_id])}",     #The URL where the customer will be redirected after a successful payment. 
+        'cancel_url': f"http://{host}{reverse('paymentfailed')}",      #The URL where the customer will be redirected if they choose to cancel the payment. 
+    }
+
+    paypal_payment = PayPalPaymentsForm(initial=paypal_checkout)
+
+        #=============== Paypal Code  End =====================
+
+    return render(request,'core/payment.html',{'paypal':paypal_payment})
+
+
+# ==================== Payment Success Page =====================================
+def payment_success(request,selected_address_id):
+
+    user= request.user
+    address_data = CustomerDetail.objects.get(pk=selected_address_id)
+    cart=Cart.objects.filter(user=request.user)
+    for cart in cart:
+        Order(user=user,customer=address_data,quantity=cart.quantity,pet=cart.product).save()
+        cart.delete()
+    return render(request,'core/payment_success.html')
+
+# ==================== Payment Failed Page =====================================
+
+def payment_failed(request):
+    return render(request,'core/payment_failed.html')
+
