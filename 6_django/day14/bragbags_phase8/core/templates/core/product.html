@@ -1,0 +1,67 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="product-container-1">
+  <div class="left-section">
+    <img
+      src="{{sc.luggage_image.url}}"
+      alt="BragBags Small Cabin
+    Suitcase"
+    />
+    <h4>Best Seller</h4>
+  </div>
+  <div class="right-section">
+    <div class="name">
+      <p>{{sc.name}}</p>
+    </div>
+    <div class="price">
+      <p>Special Price</p>
+      <h3>&#8377; {{sc.discounted_price}}</h3>
+      <span>&#8377; {{sc.original_price}}</span>
+    </div>
+    {% comment %}
+    <div class="rating">
+      <p>4.3 <i class="fa-regular fa-star"></i></p>
+      <span>5,232 ratings and 2,451 reviews</span>
+    </div>
+    {% endcomment %}
+    <div class="buttons">
+      <button class="b1">Buy Now</button>
+      <a href="{% url "addtocart" sc.id %}"> <button class="b2">Add to Cart</button></a>
+    </div>
+    <div class="product-desc">
+      <h4><b> Product Description </b></h4>
+      <p>{{sc.description}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="backhome">
+  <a href="/"> <button>Back to home page</button></a>
+  <a href="/suitcat/"> <button>Back to Category page</button></a>
+</div>
+
+<div class="checkout-similar">
+  <div class="top-text">
+    <h3>CheckOut Similar Products &darr;</h3>
+  </div>
+  <div class="similar-items">
+    <div class="card">
+      <img src="{% static "core/images/asset-28.jpeg" %}" alt="Similar Product
+      1">
+    </div>
+    <div class="card">
+      <img src="{% static "core/images/asset-37.jpeg" %}" alt="Similar Product
+      2">
+    </div>
+    <div class="card">
+      <img src="{% static "core/images/asset 23.jpeg" %}" alt="Similar Product
+      3">
+    </div>
+    <div class="card">
+      <img src="{% static "core/images/asset-21.jpeg" %}" alt="Similar Product
+      4">
+    </div>
+  </div>
+</div>
+{% comment %} <a href="/"><button>Go to home page</button></a> {% endcomment %}
+{% endblock content %}
