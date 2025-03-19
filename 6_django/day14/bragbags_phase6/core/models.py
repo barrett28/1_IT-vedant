@@ -103,7 +103,7 @@ class Order(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     customer = models.ForeignKey(CustomerDetail, on_delete=models.CASCADE)
-    pet = models.ForeignKey(Luggage, on_delete=models.CASCADE)
+    product = models.ForeignKey(Luggage, on_delete=models.CASCADE)  # Change pet → product
     quantity = models.PositiveIntegerField(default=1)
     order_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
