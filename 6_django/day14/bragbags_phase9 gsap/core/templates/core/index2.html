@@ -1,0 +1,27 @@
+{% extends "core/base_blank.html" %}{% load static %} {% block content %}
+
+<div id="main">
+  <nav>
+    <a href="#" id="logo-name">BragBags</a>
+    <div class="cntr-nav">
+      <a href="#">Home</a>
+      <a href="#">profile</a>
+      <a href="#">Logout</a>
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+      <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </nav>
+
+  <div class="one">
+    <h1>BragBags</h1>
+    <img id="suitcase1" src="{% static "core/images/bagt8.png" %}" alt=""> <img
+    id="suitcase2" src="{% static "core/images/bagt6.png" %}" alt=""> <img
+    id="suitcase3" src="{% static "core/images/bagt7.png" %}" alt="">
+    <!---->
+    {% comment %} <img id="pricedrop" src="{% static "core/images/pd2.png" %}"
+    alt=""> {% endcomment %}
+  </div>
+</div>
+
+{% endblock content %}
