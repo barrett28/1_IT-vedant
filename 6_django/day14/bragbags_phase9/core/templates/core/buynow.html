@@ -1,0 +1,72 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="checkout-container">
+    <div class="check-heading">
+      {% comment %} <h1>CheckOut Page</h1> {% endcomment %}
+    </div>
+  
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ luggage.name }}</td>
+            <td>₹{{ luggage.discounted_price }}</td>
+            <td>1</td>
+            <td>₹{{luggage.discounted_price}}</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right"><strong>Shipping</strong></td>
+            <td>₹200</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="text-right"><strong>Final Total</strong></td>
+            <td><b>₹{{ final_price }}</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="add-box">
+      <h2>Select Delivery Address</h2>
+      
+      <form method="POST" action="{% url 'buynowpayment' luggage.id %}">
+        {% csrf_token %}
+        <div class="all-add">
+          {% for ad in address %}
+          <label class="address-label">
+            <input type="radio" name="buynow_selected_address" value="{{ ad.id }}" required />
+            <div class="address-card">
+              <h3>{{ ad.name }}</h3>
+              <p><strong>Address:</strong> {{ ad.address }}</p>
+              <p><strong>City:</strong> {{ ad.city }}</p>
+              <p><strong>State:</strong> {{ ad.state }}</p>
+              <p><strong>Pincode:</strong> {{ ad.pincode }}</p>
+            </div>
+          </label>
+          {% endfor %}
+        </div>
+    
+        <div class="add-del">
+          <button type="submit">Proceed to Payment</button>
+        </div>
+      </form>
+    </div>
+    
+  
+    {% comment %} <div class="payment-button">
+      <a href="{% url "payment" %}"><button>Pay</button></a>
+    </div> {% endcomment %}
+  
+    <br />
+  </div>
+
+{% endblock content %}
