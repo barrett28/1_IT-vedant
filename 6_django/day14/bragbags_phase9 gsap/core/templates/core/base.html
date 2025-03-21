@@ -23,8 +23,9 @@
   <body>
     
     
-    
+    {% block navbar %}
     {% include "core/navbar.html" %}  <!-- This navbar for index page -->
+    {% endblock navbar %}
    
 
     {% block content %}{% endblock content %}
