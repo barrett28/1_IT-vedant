@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
@@ -22,10 +25,12 @@ nav{
     height: 10vh;
     /* background-color: aliceblue; */
     padding: 0vw 5vw;
+    z-index: 99;
 }
 
 nav #logo-name{
     font-size: 2vw;
+    font-family: "Grape Nuts", cursive;
 }
 
 nav a{
@@ -53,9 +58,6 @@ nav a{
     background: #0f0c29;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
 }
 
 .one h1{
@@ -104,3 +106,74 @@ nav a{
     width: 7vw;
 } */
 
+
+.two{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #4a4c1d5e;
+    /* background: linear-gradient(135deg, #252054, #1A1A40); */
+}
+
+.left-two, .right-two{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50%;
+    height: 100%;
+}
+
+.left-two svg{
+    margin-top: 50vh;
+    width: 80%;
+    transform: rotateX(60deg);
+}
+
+/* .right-two svg{
+    margin-top: 50vh;
+    width: 50%;
+    transform: rotateX(60deg);
+} */
+
+
+.three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    width: 100%;
+    height: 100vh;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.card-sec{
+    width: 25vw;
+    height: 70vh;
+    border-radius: 20px;
+}
+
+.card-sec .top-sec{
+    width: 25vw;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-sec .top-sec img{
+    width: 25vw;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-sec .bottom-sec{
+    width: 25vw;
+    height: calc(70vh - 50vh);
+    background-color: #302b63;
+}
