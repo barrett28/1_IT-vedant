@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
 
 *{
     margin: 0;
@@ -7,6 +10,7 @@
     box-sizing: border-box;
 }
 html , body{
+    /* background-color: #46002b5b ; */
     height: 100%;
     width: 100%;
 }
@@ -14,6 +18,7 @@ html , body{
 #main{
     width: 100%;
     height: 100%;
+    background-color: #46002b5b ;
 }
 
 nav{
@@ -55,9 +60,9 @@ nav a{
     background: -webkit-linear-gradient(to right, #243B55, #141E30);
     background: linear-gradient(to right, #243B55, #141E30);  */
 
-    background: #0f0c29;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
 }
 
 .one h1{
@@ -71,9 +76,6 @@ nav a{
     position: absolute;
     top: 40%;
     width: 27vw;
-    height: auto;
-    max-height: 60vh;
-    object-fit: contain;
     z-index: 2;
 }
 
@@ -113,7 +115,8 @@ nav a{
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: #4a4c1d5e;
+    /* background-color: #3f420b; */
+    background-color: #46002b5b ;
     /* background: linear-gradient(135deg, #252054, #1A1A40); */
 }
 
@@ -133,11 +136,47 @@ nav a{
     transform: rotateX(60deg);
 }
 
-/* .right-two svg{
-    margin-top: 50vh;
-    width: 50%;
-    transform: rotateX(60deg);
-} */
+/* Right Section Styling */
+.right-two {
+    color: white;
+    text-align: left;
+    gap: 2vh;
+}
+
+/* Stylish Heading */
+.right-two h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    /* background: linear-gradient(135deg, #000000, #407203); */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Improved Paragraph */
+.right-two p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #000;
+    max-width: 80%;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 .three{
@@ -152,28 +191,67 @@ nav a{
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 }
 
-.card-sec{
+.card-sec {
     width: 25vw;
     height: 70vh;
     border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for a modern look */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.card-sec .top-sec{
-    width: 25vw;
+.card-sec:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card-sec .top-sec {
+    width: 100%;
     height: 50vh;
     background-position: center;
     background-size: cover;
 }
 
-.card-sec .top-sec img{
-    width: 25vw;
-    height: 50vh;
-    background-position: center;
-    background-size: cover;
+.card-sec .top-sec img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card-sec .bottom-sec{
-    width: 25vw;
-    height: calc(70vh - 50vh);
-    background-color: #302b63;
+.card-sec .bottom-sec {
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to right, #ffffff, #a79f9f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+}
+
+.card-sec .bottom-sec p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.bottom-sec-button button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #46002b5b;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.bottom-sec-button button:hover {
+    background: #000000;
+    color: white;
+    transform: scale(1.05);
 }
