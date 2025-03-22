@@ -1,0 +1,18 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+<h1 style="margin-top: 100px">change Password here</h1>
+
+<form action="" method="POST" novalidate>
+  {% csrf_token %}
+
+  <div class="user_name">
+    <h3>Welcome {{request.user.first_name}}</h3>
+  </div>
+
+  {{mf.as_p}}
+
+  <input type="submit" />
+</form>
+
+{% if messages %} {% for message in messages %}
+<span class="alert alert-success">{{message}}</span>
+{% endfor %} {% endif %} {% endblock content %}
