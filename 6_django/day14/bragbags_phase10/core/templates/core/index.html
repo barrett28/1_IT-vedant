@@ -7,9 +7,16 @@
   <nav>
     <a href="#" id="logo-name">BragBags</a>
     <div class="cntr-nav">
-      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact Us</a>
       {% if request.user.is_authenticated %}
-      <a href="{% url "profile" %}">Profile</a>
+      <div class="dropdown">
+        <a href="{% url 'profile' %}" class="dropbtn">Profile</a>
+        <div class="dropdown-content">
+            <a href="{% url 'address' %}">Address</a>  
+            <a href="{% url 'order' %}">Orders</a>  
+        </div>
+    </div>
       <a href="{% url "logout" %}">Logout</a>
       <a href="{% url "viewcart" %}"><i class="fa-solid fa-cart-shopping"></i>
         {% if cart_count > 0 %}
@@ -43,9 +50,9 @@
     <div class="right-two">
       <h1>Bags That Speak for You</h1>
       <p>Your bag, your statement! Explore our exclusive collection and carry confidence wherever you go.
-        Designed for trendsetters and travelers, BragPack offers premium-quality bags with a perfect blend of fashion and function.
+        Designed for trendsetters and travelers, BragBack offers premium-quality bags with a perfect blend of fashion and function.
         Why settle for ordinary when you can Brag? Get the perfect bag that suits your personality and needs
-        Backpacks, Duffle, Travel bags, and more - all in one place! Elevate your style with BragPack today.
+        Backpacks, Duffle, Travel bags, and more - all in one place! Elevate your style with BragBack today.
       </p>
     </div>
   </div>
@@ -184,7 +191,7 @@
       <div class="row">
         <div class="text-section">
           <h4>
-            Sporty BymBags <br />
+            Sporty GymBags <br />
             and many more
           </h4>
           {% comment %} <button type="submit">Explore more</button> {% endcomment %}

@@ -48,7 +48,7 @@ body {
     align-items: center;
   }
 
-  form {
+  .login-form form {
     background-color: #46002b5b ; /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Glassmorphism effect */
     padding: 30px;
@@ -77,14 +77,14 @@ body {
     margin-bottom: 20px;
   }
   
-  .form-group label {
+  label {
     display: block;
     font-size: 1rem;
     margin-bottom: 8px;
     color: #000;
   }
   
-  .form-group input {
+   input {
     width: 100%;
     padding: 12px;
     border: none;
@@ -123,6 +123,12 @@ body {
   .login-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+  }
+
+  .forgot-link{
+    display: flex;
+    justify-content: center;
+    /* background-color: #302b63; */
   }
   
   /* Responsive Design */

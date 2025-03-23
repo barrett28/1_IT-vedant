@@ -41,35 +41,6 @@
     </table>
   </div>
 
-  {% comment %} <div class="add-box">
-    <div class="all-add">
-      {% for ad in address %}
-      <label class="address-label">
-        <input
-          type="radio"
-          name="address"
-          value="{{ ad.id }}"
-          class="address-radio"
-        />
-        <div class="address-card">
-          <div class="add-name">
-            <h3>{{ ad.name }}</h3>
-          </div>
-          <p><strong>Address:</strong> {{ ad.address }}</p>
-          <p><strong>City:</strong> {{ ad.city }}</p>
-          <p><strong>State:</strong> {{ ad.state }}</p>
-          <p><strong>Pincode:</strong> {{ ad.pincode }}</p>
-
-          <div class="add-del">
-            <a href="{% url 'deleteaddress' ad.id %}">
-              <button>Delete Address</button>
-            </a>
-          </div>
-        </div>
-      </label>
-      {% endfor %}
-    </div>
-  </div> {% endcomment %}
 
   <div class="add-box">
     <h2>Select Delivery Address</h2>
