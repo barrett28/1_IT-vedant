@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    /* background-color: #46002b5b ; */
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: #46002b5b ;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    /* background-color: aliceblue; */
+    padding: 0vw 5vw;
+    z-index: 99;
+}
+
+nav #logo-name{
+    font-size: 2vw;
+    font-family: "Grape Nuts", cursive;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2vw;
+    color: #fff;
+}
+
+.cntr-nav{
+    display: flex;
+    gap: 3.5vw;
+}
+
+.one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* background: #141E30; 
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);  */
+
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+}
+
+.one h1{
+    font-size: 20vw;
+    position: absolute;
+    top: 8%;
+    color: #d6a9a9;
+}
+
+#suitcase2{
+    position: absolute;
+    top: 40%;
+    width: 27vw;
+    z-index: 2;
+}
+
+#suitcase1{
+    position: absolute;
+    top: 38%;
+    right: 24%;
+    width: 24vw;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    z-index: 2;
+}
+
+#suitcase3{
+    position: absolute;
+    left: 20%;
+    top: 33%;
+    width: 27vw;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    z-index: 2;
+}
+
+/* #pricedrop{
+    position: absolute;
+    left: 22%;
+    top: 18%;
+    width: 7vw;
+} */
+
+
+.two{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #3f420b; */
+    background-color: #46002b5b ;
+    /* background: linear-gradient(135deg, #252054, #1A1A40); */
+}
+
+.left-two, .right-two{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50%;
+    height: 100%;
+}
+
+.left-two svg{
+    margin-top: 50vh;
+    width: 80%;
+    transform: rotateX(60deg);
+}
+
+/* Right Section Styling */
+.right-two {
+    color: white;
+    text-align: left;
+    gap: 2vh;
+}
+
+/* Stylish Heading */
+.right-two h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    /* background: linear-gradient(135deg, #000000, #407203); */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Improved Paragraph */
+.right-two p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #000;
+    max-width: 80%;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.three{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    width: 100%;
+    height: 100vh;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.card-sec {
+    width: 25vw;
+    height: 70vh;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for a modern look */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-sec:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card-sec .top-sec {
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-sec .top-sec img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-sec .bottom-sec {
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to right, #ffffff, #a79f9f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+}
+
+.card-sec .bottom-sec p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.bottom-sec-button button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #46002b5b;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.bottom-sec-button button:hover {
+    background: #000000;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+/* =========dropdown */
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: #fff;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the Dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropbtn:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}

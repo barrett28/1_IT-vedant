@@ -1,0 +1,16 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="suitcase-category">
+  {% for sc in sc %}
+  <div class="box" id="box1">
+    <a href="{% url "product" sc.id %}">
+      <img src="{{ sc.luggage_image.url }}" alt="back_images" />
+    </a> <br>
+    <p class="p_block">&#8377;{{sc.discounted_price}}</p>
+    <i>{{sc.original_price}}</i>
+    <p>{{sc.small_description}}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
