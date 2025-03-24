@@ -67,7 +67,8 @@
 }
 
 .form-label {
-  display: block;
+  display: flex;
+  justify-content: start;
   font-size: 1rem;
   margin-bottom: 8px;
   color: #000;
