@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% comment %} <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "core/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/product.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/navbar.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/suitcategory.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/registration.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/profile.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/viewcart.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/login.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/summary.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/address.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/checkout.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/indexx.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/forgotpass.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/resetpass.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/passreset.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/paymentsuccess.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/payment.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/about.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/contact.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/footer.css" %}">
+    {% block css %}{% endblock css %}
+    <link rel="icon" type="image/png" href="{% static "core/images/suitcase-rolling-solid.svg" %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>BragBags</title>
+  </head>
+  <body>
+    
+    
+    {% block navbar %}
+    {% include "core/navbar.html" %}  <!-- This navbar for index page -->
+    {% endblock navbar %}
+   
+
+    {% block content %}{% endblock content %}
+
+    {% block footer %}
+    {% include "core/footer.html" %}
+    {% endblock footer %}
+
+    <script>
+      let slides = document.querySelectorAll(".slide");
+      let currentIndex = 0;
+
+      function showSlides() {
+          slides.forEach(slide => slide.classList.remove("active"));
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add("active");
+      }
+
+      setInterval(showSlides, 2000); 
+
+      function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+  </script>
+
+    <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script>
+    {% comment %} <script src="{% static "core/js/bootstrap.min.js" %}"></script> {% endcomment %}
+    <script src="https://kit.fontawesome.com/154c2a8c03.js" crossorigin="anonymous"></script>
+  </body>
+</html>

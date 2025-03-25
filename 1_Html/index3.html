@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Level UI - Cyberpunk Divs</title>
+    <style>
+        /* 🌌 Futuristic Cyberpunk Background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+
+        /* 🔥 Glowing Particle Mouse Trail */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.15), transparent);
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        /* 🎭 Wrapper for Floating Boxes */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            perspective: 800px;
+        }
+
+        /* 📦 Floating Cyber Boxes */
+        .box {
+            width: 280px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3),
+                0 2px 10px rgba(255, 0, 255, 0.3);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #0ff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: rotateX(10deg) translateY(10px);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards ease-out, floating 6s infinite ease-in-out alternate;
+        }
+
+        /* 🌀 Floating Effect */
+        @keyframes floating {
+            from {
+                transform: translateY(5px) rotateX(10deg);
+            }
+
+            to {
+                transform: translateY(-5px) rotateX(15deg);
+            }
+        }
+
+        /* 🌟 Hover Effect - Feels ALIVE */
+        .box:hover {
+            transform: rotateX(0deg) scale(1.08);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.6),
+                0 0 30px rgba(255, 0, 255, 0.6);
+        }
+
+        /* 💎 Ultra-Premium Add Button */
+        .add-btn {
+            margin-top: 20px;
+            padding: 14px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.6),
+                0 0 20px rgba(0, 255, 255, 0.6);
+            position: relative;
+            overflow: hidden;
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        /* 🚀 Glowing Pulse Effect */
+        @keyframes pulseGlow {
+            from {
+                box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+            }
+
+            to {
+                box-shadow: 0 0 35px rgba(255, 0, 255, 0.9);
+            }
+        }
+
+        /* 🎇 Shockwave Effect on Click */
+        .add-btn:active::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 0, 255, 0.4), transparent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0.7;
+            border-radius: 50%;
+            transition: transform 0.5s ease-out;
+        }
+
+        .add-btn:active {
+            transform: scale(1.2) rotate(2deg);
+        }
+
+        /* 🎥 Cinematic Entry Animation */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: rotateX(0deg) translateY(0);
+            }
+        }
+
+        /* ✨ Mouse Particle Trail */
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(0, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="box">Box 1</div>
+    </div>
+
+    <button class="add-btn" onclick="addDiv()">+ Add</button>
+
+    <script>
+        let count = 1;
+
+        function addDiv() {
+            count++;
+            let newDiv = document.createElement("div");
+            newDiv.classList.add("box");
+            newDiv.textContent = `Box ${count}`;
+
+            // Apply animation delay for staggered effect
+            newDiv.style.animationDelay = `${count * 0.05}s`;
+
+            document.querySelector(".wrapper").appendChild(newDiv);
+        }
+
+        // 🎆 Mouse Particle Trail Effect
+        document.addEventListener("mousemove", function (e) {
+            let particle = document.createElement("div");
+            particle.classList.add("particle");
+            document.body.appendChild(particle);
+
+            particle.style.left = `${e.clientX}px`;
+            particle.style.top = `${e.clientY}px`;
+
+            setTimeout(() => {
+                particle.style.opacity = "0";
+                particle.style.transform = "scale(2)";
+            }, 50);
+
+            setTimeout(() => particle.remove(), 600);
+        });
+    </script>
+
+</body>
+
+</html>

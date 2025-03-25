@@ -1,0 +1,48 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="add-container">
+  <h1>this is address page</h1>
+</div>
+
+<div class="add_split">
+    <div class="add-form">
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            
+            <!---->
+            
+            {% for a in ad %}
+            
+            <div class="form-content">{{a.label_tag}} {{a}} {{a.errors}}</div>
+            {%endfor %}
+            
+            <input type="submit" value="save" />
+        </form>
+    </div>
+
+    <br>
+    
+    <div class="add-box">
+        <div class="all-add">
+            {% for ad in address %}
+            <div class="add-name">
+                <h3>{{ad.name}}</h3>
+            </div>
+            <p>Address: {{ad.address}}</p>
+            <p>City: {{ad.city}}</p>
+            <p>State: {{ad.state}}</p>
+            <p>Pincode: {{ad.pincode}}</p>
+
+            <br> <br>
+            
+            <div class="add-del">
+                <a href="{% url "deleteaddress" ad.id %}"><button>Delete Address</button></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock content %}

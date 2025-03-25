@@ -1,0 +1,122 @@
+/* General Styles */
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+} */
+
+/* Payment Container */
+.payment-section{
+    display: flex;
+    justify-content: center;
+}
+
+.payment-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 120px;
+    text-align: center;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Payment Header */
+.payment-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.payment-header p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* PayPal Container */
+.paymet-paypal {
+    margin: 20px 0;
+}
+
+.paymet-paypal iframe {
+    width: 100%;
+    max-width: 300px; /* Adjust the size of the PayPal button */
+    height: auto;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Footer */
+.payment-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.payment-footer a {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.payment-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-container {
+        padding: 20px;
+    }
+
+    .payment-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .payment-header p {
+        font-size: 0.9rem;
+    }
+
+    .paymet-paypal iframe {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .payment-container {
+        padding: 15px;
+    }
+
+    .payment-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .payment-header p {
+        font-size: 0.8rem;
+    }
+
+    .paymet-paypal iframe {
+        max-width: 200px;
+    }
+}
