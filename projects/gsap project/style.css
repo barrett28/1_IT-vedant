@@ -10,7 +10,8 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: rgba(30, 67, 186, 0.331);
+    background-color: #a9906f88;
+    /* background-color: rgba(30, 67, 186, 0.331); */
 }
 
 /* Existing styles remain the same */
@@ -23,7 +24,7 @@ section {
 nav {
     color: #000;
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,9 +41,12 @@ nav .part2 {
     display: flex;
     justify-content: center;
     gap: 25px;
+    flex-wrap: wrap;
 }
 
 nav .part2 a {
+    flex-shrink: 1;
+    font-size: 18px;
     color: #000;
     text-decoration: none;
 }
@@ -125,7 +129,7 @@ nav .part2 a {
 }
 
 .center-part1 button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .center-part2 {
@@ -145,8 +149,8 @@ nav .part2 a {
 /* ===============section 2=============== */
 
 .section2 .services{
-    height: 20vh;
-    padding: 50px;
+    height: 15vh;
+    padding: 80px 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -163,36 +167,251 @@ nav .part2 a {
 }
 
 .container{
-    height: 80vh;
-    padding-left: 50px;
-    padding-right: 50px;
+
+    height: auto;
+    padding: 0px 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
 .elem {
-    width: 20%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
+    display: flex; 
+    flex-shrink: 1;
+    width: 47%;
+    height: 250px;
     overflow: hidden;
     background-color: rgba(30, 67, 186, 0.331);
     border-radius: 30px;
+    box-shadow: 7px 7px 0px black;
 }
 
 .elem img {
-    border-radius: 30px 30px 0 0;
-    width: 100%;
-    height: 70%;
+    width: 50%; 
+    height: 100%; 
     object-fit: cover;
+    border-radius: 30px 0 0 30px; 
+    border: 2px solid black;
 }
 
 .elem p {
-    height: 30%;
+    width: 50%; 
+    height: 100%;
     padding: 10px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     font-size: 14px;
     background-color: #f8f8f8a6;
+    border-radius: 0 30px 30px 0;   
+    text-align: left;
+}
+
+/* -----------section3---------- */
+
+.section3 {
+    padding: 40px 50px;
+    width: 100%;
+    height: auto;
+    background-color: #a9906f88;
+    display: flex;
+    flex-direction: column;
+    gap: 50px; 
+}
+
+.section3 .up, .section3 .down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.section3 .up p, .section3 .down p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.section3 .up img, .section3 .down img {
+    max-width: 300px; 
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+/* ----------footer ------- */
+
+/* FOOTER STYLING */
+.footer {
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    color: white;
+    padding: 40px 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-about, .footer-links, .footer-newsletter {
+    width: 30%;
+}
+
+.footer-about h2 {
+    font-size: 24px;
+}
+
+.footer-about p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.footer-links h3,
+.footer-newsletter h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #ffffffb3;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-newsletter input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-newsletter button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.footer-newsletter button:hover {
+    background-color: #ff9900;
+}
+
+.footer-social {
+    margin-top: 15px;
+}
+
+.footer-social a {
+    color: white;
+    font-size: 22px;
+    margin-right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 5px 0;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ffffffb3;
+}
+
+/* ----login /sign up---- */
+
+.auth-container {
+    width: 350px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 7px 7px 0px black;
+}
+
+/* Title */
+.auth-container .form-box h2 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.auth-container .form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-container .form-box form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Button Styling */
+.auth-container .form-box form button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 5px;
+}
+
+.auth-container .form-box form button:hover {
+    transform: scale(1.05);
+}
+
+/* Toggle Text */
+.auth-container .form-box p {
+    color: white;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-container .form-box p span {
+    color: yellow;
+    cursor: pointer;
+    text-decoration: underline;
 }
