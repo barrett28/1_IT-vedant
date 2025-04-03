@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>friend request</title>
+</head>
+
+<body>
+
+    <div id="card">
+        <img src="https://images.unsplash.com/photo-1532074565847-ae9c3c0bfbf2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="model image">
+        <h1>Jesica</h1>
+        <h5>Stranger</h5>
+        <div class="btn-container">
+            <!-- <button id="remove">Remove</button> -->
+            <button id="add">Add Friend</button>
+        </div>
+    </div>
+
+    <script>
+        var a = document.querySelector("#add")
+        var b = document.querySelector("h5")
+        flag = 0
+        a.addEventListener("click", function () {
+            if (flag == 0) {
+                b.innerHTML = "friend"
+                b.style.color = "green"
+                a.innerHTML = "remove"
+                a.style.backgroundColor = "#9f3327"
+                flag = 1
+            } else {
+                b.innerHTML = "stranger"
+                b.style.color = "#9f3327"
+                a.innerHTML = "Add friend"
+                a.style.backgroundColor = "cornflowerblue"
+                flag = 0
+            }
+        })
+
+    </script>
+</body>
+
+</html>
