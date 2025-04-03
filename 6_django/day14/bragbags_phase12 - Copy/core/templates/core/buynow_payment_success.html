@@ -1,0 +1,19 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+<div class="pay-success-container">
+  <div class="pay-succ-head">
+    <h1>Payment Success</h1>
+    <div class="pay-success-img">
+      <img src="{% static "core/images/paysuccess.png" %}" alt="">
+    </div>
+    <br>
+    <h3>Keep exploring 😊</h3>
+     <div class="return-button">
+        <a href="{% url "index" %}"><button class="login-button">Home</button></a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+<!--same of payment successfull -->

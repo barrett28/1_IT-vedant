@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="container">
+            <div class="heading">
+                <h1>Converter</h1>
+            </div>
+            <div class="content">
+                <input type="number" name="" id="display" value="0"> <br><br>
+                <input type="radio" name="" id="mtcm">
+                <label for="mtcm">Meter To Centimeter</label> <br>
+                <input type="radio" name="" id="kmtm">
+                <label for="mtcm">kilometer To meter</label> <br>
+                <input type="radio" name="" id="kmtmi">
+                <label for="mtcm">kiloMeter To niles</label> <br>
+                <button type="button" value="Enter" onclick="show()">Enter</button>
+                <h1 id="result"></h1>
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+
+        let dis = document.getElementById("display")
+        let mtcm = document.getElementById("mtcm")
+        let kmtm = document.getElementById("kmtm")
+        let kmtmi = document.getElementById("kmtmi")
+        let res = document.getElementById("result")
+
+        function show() {
+            if (dis.value > 0) {
+                if (mtcm.checked) {
+                    let con = dis.value * 100
+                    res.innerHTML = `${dis.value} meter = ${con} centimeter`
+                }
+                if (kmtm.checked) {
+                    let con = dis.value * 1000
+                    res.innerHTML = `${dis.value} kilometer = ${con} meter`
+                }
+                if (kmtmi.checked) {
+                    let con = dis.value * 1.2
+                    res.innerHTML = `${dis.value} kilometer = ${con} miles`
+                }
+            } else {
+                res.innerHTML = `invalid input`
+            }
+        }
+    </script>
+</body>
+
+</html>
