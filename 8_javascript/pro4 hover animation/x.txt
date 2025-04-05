@@ -1,0 +1,16 @@
+
+        // var elem1 = document.querySelector("#elem1")
+        // var elemimg = document.querySelector("#elem1 img")
+
+        // elem1.addEventListener("mousemove", function (e) {
+        //     elemimg.style.left = e.x + "px"
+        //     elemimg.style.top = e.y + "px"
+        // })
+        // elem1.addEventListener("mouseenter", function (e) {
+        //     elemimg.style.opacity = 1
+        // })
+        // elem1.addEventListener("mouseleave", function (e) {
+        //     elemimg.style.opacity = 0
+        // })
+
+        // 2nd approach

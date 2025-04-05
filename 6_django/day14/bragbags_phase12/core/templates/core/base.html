@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{% static "core/css/about.css" %}">
     <link rel="stylesheet" href="{% static "core/css/contact.css" %}">
     <link rel="stylesheet" href="{% static "core/css/footer.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/swing.css" %}">
     {% block css %}{% endblock css %}
     <link rel="icon" type="image/png" href="{% static "core/images/suitcase-rolling-solid.svg" %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -46,7 +47,7 @@
     {% endblock footer %}
 
     <script>
-      let slides = document.querySelectorAll(".slide");
+      {% comment %} let slides = document.querySelectorAll(".slide");
       let currentIndex = 0;
 
       function showSlides() {
@@ -62,7 +63,46 @@
         const hamburger = document.querySelector('.hamburger');
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
-    }
+    } {% endcomment %}
+
+    document.querySelectorAll(".elem").forEach(function (elem) {
+
+      elem.addEventListener("mouseleave", function (dets) {
+          gsap.to(elem.querySelector("img"), {
+              opacity: 0,
+              ease: Power3,
+              duration: 0.5,
+          });
+          gsap.to(elem.querySelector("h1"), {
+              opacity: .7,
+              duration: 0.5,
+              scale:1,
+          });
+      });
+
+      var rot = 0
+      var swing = 0
+      elem.addEventListener("mousemove", function (dets) {
+          // console.log(e.clientX, e.clientY)
+          // console.log(e.clientY - elem.getBoundingClientRect().top)
+          var diff = dets.clientY - elem.getBoundingClientRect().top;
+          swing = dets.clientX - rot
+          rot = dets.clientX
+          gsap.to(elem.querySelector("img"), {
+              opacity: 1,
+              ease: Power3,
+              top: diff,
+              left: dets.clientX,
+              rotate: gsap.utils.clamp(-10, 10, swing)
+          })
+          gsap.to(elem.querySelector("h1"), {
+              opacity: 1,
+              duration: 0.5,
+              scale:1.1,
+          })
+      })
+  })
+
   </script>
 
     <script src="{% static "core/js/jquery.js" %}"></script>

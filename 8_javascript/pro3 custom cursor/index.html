@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CustomCursor</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="cursor">
+        </div>
+        <h1>cursor</h1>
+    </main>
+
+    <script>
+        var a = document.querySelector("main")
+        var b = document.querySelector(".cursor")
+
+        a.addEventListener("mousemove", function (e) {
+            // console.log(e)
+            b.style.left = e.x + "px"
+            b.style.top = e.y + "px"
+        })
+    </script>
+</body>
+
+</html>

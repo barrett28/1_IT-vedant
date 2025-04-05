@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hover</title>
+</head>
+
+<body>
+
+    <main>
+        <div id="elem1" class="elem">
+            <h1>Lamborghini</h1>
+            <img src="https://images.unsplash.com/photo-1607870379000-1f6d5e892aba?q=80&w=2052&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="lambo">
+        </div>
+        <div class="elem">
+            <h1>Royal Enfield Bullet</h1>
+            <img src="https://images.unsplash.com/photo-1574929465363-f6c5990656ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="royal">
+        </div>
+        <div class="elem">
+            <h1>Bugatti</h1>
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="bugatti">
+        </div>
+        <div class="elem">
+            <h1>Kawasaki Ninja</h1>
+            <img src="https://images.unsplash.com/photo-1597497287565-a38cfaa4e762?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="kawasaki">
+        </div>
+    </main>
+
+    <script>
+        let elems = document.querySelectorAll(".elem");
+
+        elems.forEach(function (e) {
+            let img = e.querySelector("img"); // safer than childNodes[3]
+
+            e.addEventListener("mouseenter", function () {
+                img.style.opacity = 1;
+            });
+
+            e.addEventListener("mouseleave", function () {
+                img.style.opacity = 0;
+            });
+
+            e.addEventListener("mousemove", function (val) {
+                // Get position relative to the element
+                let rect = e.getBoundingClientRect();
+                let x = val.clientX - rect.left;
+                let y = val.clientY - rect.top;
+
+                img.style.left = x + "px";
+                img.style.top = y + "px";
+            });
+        });
+
+    </script>
+</body>
+
+</html>
