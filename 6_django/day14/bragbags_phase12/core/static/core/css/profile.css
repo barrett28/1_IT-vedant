@@ -1,193 +1,162 @@
-/* Profile Container */
-.profile_container {
+.profile {
+  min-height: 100vh;
+  padding: 0px 20px;
+}
+
+.profile__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile__title {
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.profile__message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.profile__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.profile__left,
+.profile__right {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.profile__avatar,
+.profile__section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.profile__avatar i,
+.profile__section-title i {
+  font-size: 24px;
+  color: #4a90e2;
+}
+
+.profile__avatar h3,
+.profile__section-title h3 {
+  color: #2c3e50;
+  font-size: 20px;
+  margin: 0;
+}
+
+.profile__form-group {
+  margin-bottom: 20px;
+}
+
+.profile__label {
+  display: block;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.profile__field input,
+.profile__field select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.profile__field input:focus,
+.profile__field select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.profile__error-text {
+  color: #dc3545;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.profile__actions {
   display: flex;
   justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.profile__submit-btn,
+.profile__password-btn {
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
   align-items: center;
-  min-height: 100vh;
-  /* background-color: #46002b5b; */
-  padding: 20px;
+  gap: 8px;
+  transition: all 0.3s;
 }
 
-/* Profile Wrapper */
-.profile-wrapper {
-  margin-top: 120px;
-  background-color: #46002b5b; /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  max-width: 500px;
-  animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-  from {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Profile Heading */
-.profile-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* Gradient text */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeInUp 1s ease-in-out;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Profile Form */
-.pro-form {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Form Section */
-.form-section {
-  margin-bottom: 20px;
-}
-
-.form-label {
-  display: flex;
-  justify-content: start;
-  font-size: 1rem;
-  margin-bottom: 8px;
-  color: #000;
-}
-
-.pro-form input,
-.pro-form textarea,
-.pro-form select {
-  width: 100%;
-  padding: 12px;
+.profile__submit-btn {
+  background: linear-gradient(45deg, #4a90e2, #357abd);
+  color: white;
   border: none;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  color: #000;
-  font-size: 1rem;
-  transition: background 0.3s ease;
 }
 
-.pro-form input:focus,
-.pro-form textarea:focus,
-.pro-form select:focus {
-  background: rgba(255, 255, 255, 0.3);
-  outline: none;
+.profile__password-btn {
+  background: #2c3e50;
+  color: white;
+  text-decoration: none;
 }
 
-/* Error Messages */
-.error-message {
-  color: #ff6b6b;
-  font-size: 0.9rem;
-  margin-top: 5px;
+.profile__submit-btn:hover,
+.profile__password-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Success Messages */
-.success-message {
-  color: #4caf50;
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Submit Button */
-.submit-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* Gradient button */
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 20px;
-}
-
-.submit-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
-}
-
-/* Additional Buttons */
-.button-1 {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* Gradient button */
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 10px;
-}
-
-.button-1:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
-}
-
-/* Responsive Design */
+/* Responsive design */
 @media (max-width: 768px) {
-  .profile-heading {
-      font-size: 2rem;
+  .profile__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
   }
 
-  .profile-wrapper {
-      padding: 20px;
+  .profile__actions {
+      flex-direction: column;
   }
 
-  .pro-form input,
-  .pro-form textarea,
-  .pro-form select {
-      padding: 10px;
-  }
-
-  .submit-button,
-  .button-1 {
-      padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-heading {
-      font-size: 1.8rem;
-  }
-
-  .profile-wrapper {
-      padding: 15px;
-  }
-
-  .pro-form input,
-  .pro-form textarea,
-  .pro-form select {
-      padding: 8px;
-  }
-
-  .submit-button,
-  .button-1 {
-      padding: 8px;
+  .profile__submit-btn,
+  .profile__password-btn {
+      width: 100%;
+      justify-content: center;
   }
 }

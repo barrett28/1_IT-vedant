@@ -1,0 +1,40 @@
+{% extends "core/base.html" %} {% load static %}
+
+{% block content %}
+<div class="login">
+    <div class="login__container">
+        <div class="login__title">
+            <h1>Welcome Back</h1>
+            <p>Please login to your account</p>
+        </div>
+
+        <div class="login__form">
+            <form action="" method="POST" novalidate>
+                {% csrf_token %}
+                
+                {% if mf.non_field_errors %}
+                    {% for error in mf.non_field_errors %}
+                    <div class="login__error">
+                        <span class="alert alert-danger">{{error}}</span>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+                
+                {% for m in mf%}
+                <div class="login__form-group">
+                    {{m.label_tag}} 
+                    {{m}}
+                    <div class="login__error-field">{{m.errors}}</div>
+                </div>
+                {% endfor %}
+
+                <button type="submit" class="login__button">Sign In</button>
+            </form>
+        </div>
+        
+        <div class="login__footer">
+            <a class="login__forgot-link" href="{% url 'forgotpassword' %}">Forgot password?</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

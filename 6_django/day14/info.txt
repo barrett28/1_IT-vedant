@@ -1,1 +1,4 @@
-last_phase11 latest hai
+phase12 latest hai 
+
+thode kaam bache hai 
+messages daalna and validators lagana (address, login , register me)
