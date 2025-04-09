@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Coustard", serif;
+    font-weight: 100;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    background-color: #0F0D0D;
+}
+
+#page1{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#nav{
+    height: 6.5vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+#nav h4{
+    text-transform: uppercase;
+}
+
+#nav-part2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2vw;
+}
+
+#nav-part2 h5{
+    text-transform: uppercase;
+}
+
+#nav-part2 h5:nth-child(1){
+    border-bottom: 2px solid white;
+}
+
+#nav-part3{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.text-wrapper {
+    margin-left: 12vw;
+}
+  
+#page1 h1 {
+    font-size: 6vw;
+    font-weight: 100;
+    margin-top: 7vw;
+}
+  
+#page1 h2 {
+    font-size: 6vw;
+    font-weight: 100;
+}
+
+.vid-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vw;
+}
+
+/* ------------------ */
+
+#page2{
+    min-height: 150vh;
+    width: 100%;
+}
+  
+
+
