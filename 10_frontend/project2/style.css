@@ -62,15 +62,16 @@ main{
     margin-left: 12vw;
 }
   
-#page1 h1 {
+.text-wrapper h1 {
     font-size: 6vw;
     font-weight: 100;
     margin-top: 7vw;
 }
   
-#page1 h2 {
+.text-wrapper h2 {
     font-size: 6vw;
     font-weight: 100;
+    margin-left: 8vw;
 }
 
 .vid-wrapper{
@@ -80,12 +81,51 @@ main{
     margin-top: 6vw;
 }
 
+.vid-wrapper video{
+    width: 60%;
+}
 /* ------------------ */
 
 #page2{
     min-height: 150vh;
     width: 100%;
 }
+
+
+  
+
+/* - */
+/* From Uiverse.io by mi-series */ 
+.button {
+    width: 150px;
+    padding: 0;
+    border: none;
+    transform: rotate(0deg);
+    transform-origin: center;
+    font-family: "Gochi Hand", cursive;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #494a4b;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: #DC143C;
+  }
+  
+  .button span {
+    background: #000;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 2px solid #494a4b;
+  }
+  
+  .button:active {
+    transform: translateY(5px);
+    padding-bottom: 0px;
+    outline: 0;
+  }
   
 
 

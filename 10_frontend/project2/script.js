@@ -37,7 +37,7 @@ var tl = gsap.timeline({
     trigger: ".text-wrapper",
     scroller: "main",
     markers: true,
-    start: "top 27%",
+    start: "top 20%",
     end: "top 0",
     scrub: true,
   },
@@ -61,6 +61,7 @@ tl.to(
   "#page1 .vid-wrapper video",
   {
     width: "90%",
+    duration: 2,
   },
   "anim"
 );
