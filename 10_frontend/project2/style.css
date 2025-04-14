@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Coustard:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #fff;
-    font-family: "Coustard", serif;
+    font-family: "Reddit Sans", sans-serif;
     font-weight: 100;
 }
 html , body{
@@ -34,6 +34,9 @@ main{
 
 #nav h4{
     text-transform: uppercase;
+    color: #DC143C;
+    font-weight: 700;
+    font-size: 1.5vw;
 }
 
 #nav-part2{
@@ -45,6 +48,7 @@ main{
 
 #nav-part2 h5{
     text-transform: uppercase;
+    font-weight: 500;
 }
 
 #nav-part2 h5:nth-child(1){
@@ -64,13 +68,13 @@ main{
   
 .text-wrapper h1 {
     font-size: 6vw;
-    font-weight: 100;
+    font-weight: 400;
     margin-top: 7vw;
 }
   
 .text-wrapper h2 {
     font-size: 6vw;
-    font-weight: 100;
+    font-weight: 400;
     margin-left: 8vw;
 }
 
@@ -87,8 +91,31 @@ main{
 /* ------------------ */
 
 #page2{
-    min-height: 150vh;
+    min-height: 122vh;
     width: 100%;
+}
+
+#page2 h1{
+    margin-top: 7vw;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.page2-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vw;
+}
+
+.page-left{
+    background-color: red;
+    width: 30%;
+}
+
+.page-right{
+    background-color: red;
+    width: 30%;
 }
 
 

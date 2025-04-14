@@ -46,6 +46,7 @@ tl.to(
   "#page1 h1",
   {
     x: -100,
+    duration: 1,
   },
   "anim"
 );
@@ -53,6 +54,7 @@ tl.to(
   "#page1 h2",
   {
     x: 100,
+    duration: 1,
   },
   "anim"
 );
