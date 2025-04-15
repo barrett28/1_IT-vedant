@@ -1,11 +1,12 @@
-import React from "react";
+import { Avenger, AvengerClass } from "./Shield";
+import React, { Fragment } from "react";
 
-export function Avenger() {
-  return <h1>My name is CaptainAmerica</h1>;
+function Shield() {
+  return (
+    <Fragment>
+      <Avenger first_name="steve roge" />
+      <AvengerClass heroic_name="Captain America" />
+    </Fragment>
+  );
 }
-
-export class AvengerClass extends React.Component {
-  render() {
-    return <h1>this is class </h1>;
-  }
-}
+export default Shield;

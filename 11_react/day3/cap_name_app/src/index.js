@@ -1,11 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-import { Avenger, AvengerClass } from "./App.js";
+import Shield from "./App.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Fragment>
-    <Avenger />
-    <AvengerClass />
-  </Fragment>
-);
+root.render(<Shield />);
