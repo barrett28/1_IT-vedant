@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drop-map-iframe</title>
+    <style>
+        * {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        area {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Choose a city</h2>
+
+    <select name="cities" id="cityDropdown">
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+        <option value="kolkata">Kolkata</option>
+        <option value="chennai">Chennai</option>
+    </select>
+
+    <h2>Choose from Dropdown</h2>
+
+    <input list="searchList" name="city" id="cityInput">
+    <datalist id="searchList">
+        <option value="mumbai">
+        <option value="delhi">
+        <option value="kolkata">
+        <option value="chennai">
+    </datalist>
+
+
+    <!-- ---------- -->
+
+    <h2>some area on the image is clickable</h2>
+    <img src="https://images.unsplash.com/photo-1742201876722-85a042294575?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="unsplash_img" usemap="#imgpahad">
+
+    <map name="imgpahad">
+        <area target="_self" alt="this is wikipedia" title="this is wikipedia" href="https://www.wikipedia.org/"
+            coords="71,189,1962,2353" shape="rect">
+    </map>
+
+    <!-- ------------------------ -->
+
+    <!-- <iframe src="https://www.wikipedia.org/" frameborder="0" width="300px" height="300px"></iframe> -->
+
+    <a href="https://www.wikipedia.org/" target="mapingframe">target to iframe</a>
+
+    <iframe name="mapingframe" width="300px" height="300px" frameborder="0"></iframe>
+
+
+    <!-- ------------------ -->
+    <br><br><br>
+    <table border="1">
+        <tr>
+            <th colspan="2">Name & Age</th>
+            <!-- <th>Age</th> -->
+        </tr>
+        <tr>
+            <td rowspan="2">Vedant</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <!-- <td>Vedantu</td> -->
+            <td>15</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <table border="1">
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Details</th>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>City</td>
+        </tr>
+        <tr>
+            <td>Bharat</td>
+            <td>22</td>
+            <td>Mumbai</td>
+        </tr>
+    </table>
+
+    <br><br><br>
+
+    <table border="3">
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Detail</th>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>city</td>
+        </tr>
+        <tr>
+            <td>Vedant</td>
+            <td>25</td>
+            <td>Mumbai</td>
+        </tr>
+    </table>
+
+    <br><br><br>
+
+
+
+</body>
+
+</html>

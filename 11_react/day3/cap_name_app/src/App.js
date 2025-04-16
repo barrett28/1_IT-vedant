@@ -1,4 +1,4 @@
-import { Avenger, AvengerClass } from "./Shield";
+import { Avenger, AvengerClass, AvengerState, AvengerStateCon } from "./Shield";
 import React, { Fragment } from "react";
 
 function Shield() {
@@ -6,6 +6,8 @@ function Shield() {
     <Fragment>
       <Avenger first_name="steve roge" />
       <AvengerClass heroic_name="Captain America" />
+      <AvengerState heroic_name="Dupinder" />
+      <AvengerStateCon heroic_name="captain" />
     </Fragment>
   );
 }
