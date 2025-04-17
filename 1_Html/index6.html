@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inner Scroll First</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        body.lock-scroll {
+            overflow: hidden;
+            /* lock outer scroll */
+        }
+
+        .container {
+            min-height: 300vh;
+            /* Big enough to scroll after */
+            background: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .scroll-box {
+            width: 300px;
+            height: 600px;
+            overflow-y: auto;
+            background: #fff;
+            padding: 20px;
+            border: 2px solid #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .content {
+            height: 1200px;
+            /* Enough to scroll */
+        }
+
+        .after-content {
+            margin-top: 100px;
+            width: 100%;
+            padding: 40px;
+            background: #d8d8d8;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="lock-scroll">
+
+    <div class="container">
+        <div class="scroll-box" id="innerScroll">
+            <div class="content">
+                <h3>Scroll Me First</h3>
+                <p>This box scrolls first. Page won’t move until I’m done.</p>
+                <!-- Filler content -->
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Repellendus magni, explicabo eveniet modi!</p>
+                <p>Voluptatem, fuga aliquam. Dolorem, eaque.</p>
+                <p>Sapiente atque voluptatum quia laboriosam!</p>
+                <p>Molestias laborum exercitationem in!</p>
+                <p>Architecto velit quidem nemo, deleniti!</p>
+                <p>Ullam hic rem veniam id.</p>
+                <p>Tenetur iste dolorum facilis?</p>
+                <p>Voluptates earum, similique tempora.</p>
+                <p>Adipisci laborum natus voluptatem!</p>
+            </div>
+        </div>
+
+        <div class="after-content">
+            <h2>Now the page scrolls!</h2>
+            <p>This scrolls only after inner scroll finishes.</p>
+        </div>
+    </div>
+
+    <script>
+        const innerScroll = document.getElementById('innerScroll');
+        const body = document.body;
+
+        innerScroll.addEventListener('scroll', () => {
+            const isAtBottom = innerScroll.scrollTop + innerScroll.clientHeight >= innerScroll.scrollHeight;
+
+            if (isAtBottom) {
+                body.classList.remove('lock-scroll'); // enable outer scroll
+            }
+        });
+
+        // Trap scroll events until inner is done
+        document.addEventListener('wheel', function (e) {
+            if (body.classList.contains('lock-scroll')) {
+                const scrollTop = innerScroll.scrollTop;
+                const scrollHeight = innerScroll.scrollHeight;
+                const clientHeight = innerScroll.clientHeight;
+
+                const isAtTop = scrollTop === 0;
+                const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+                const goingDown = e.deltaY > 0;
+                const goingUp = e.deltaY < 0;
+
+                if ((goingDown && !isAtBottom) || (goingUp && !isAtTop)) {
+                    // Scroll inner box only
+                    e.preventDefault();
+                    innerScroll.scrollTop += e.deltaY;
+                } else if (isAtBottom && goingDown) {
+                    // Let scroll go to body now
+                    body.classList.remove('lock-scroll');
+                } else {
+                    e.preventDefault(); // still block page
+                }
+            }
+        }, {passive: false});
+    </script>
+
+</body>
+
+</html>

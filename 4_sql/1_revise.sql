@@ -33,3 +33,26 @@ delete from employee
 where id = 5;
 
 select DISTINCT department from employee;
+
+create table departments(
+	id INT,
+    name VARCHAR(50)
+);
+
+alter table departments change column dept_id id INT (20);
+
+select * from departments;
+
+insert into departments(id, name)
+values(1, "IT"),
+(2, "HR"),
+(3, "Finance"),
+(4, "Sales");
+
+select e.name, d.name from employee as e
+inner join departments as d 
+on e.department = d.name;
+
+
+select avg(salary) as average salary from employee 
+group by department;
