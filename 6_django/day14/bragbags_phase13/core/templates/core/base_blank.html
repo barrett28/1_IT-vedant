@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/indexx.css" %}">
+    <link rel="icon" type="image/png" href="{% static "core/images/suitcase-rolling-solid.svg" %}">
+    <title>BragBags</title>
+  </head>
+  <body>
+    
+    <!-- gsap-->
+    {% block script %}{% endblock script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {% block content %}{% endblock content %}
+
+
+    <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script>
+    <script src="{% static "core/js/bootstrap.min.js" %}"></script>
+    
+    <script src="https://kit.fontawesome.com/154c2a8c03.js" crossorigin="anonymous"></script>
+  </body>
+</html>

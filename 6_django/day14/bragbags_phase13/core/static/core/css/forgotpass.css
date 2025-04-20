@@ -1,0 +1,144 @@
+/* Forgot Password Container */
+.forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    /* background-color: #46002b5b; */
+    padding: 50px;
+}
+
+/* Forgot Password Form Container */
+.forgot-pass-form-container {
+    background-color: #46002b5b; /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Forgot Password Heading */
+.forgot-heading {
+    text-align: center;
+}
+
+.forgot-heading h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1s ease-in-out;
+    margin-top: 120px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Forgot Password Form */
+.forgot-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.forgot-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.forgot-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #000;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.forgot-form input[type="email"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+/* Reset Password Button */
+.reg-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* Gradient button */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reg-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .forgot-heading h1 {
+        font-size: 2rem;
+    }
+
+    .forgot-pass-form-container {
+        padding: 20px;
+    }
+
+    .forgot-form input[type="email"] {
+        padding: 10px;
+    }
+
+    .reg-button {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forgot-heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .forgot-pass-form-container {
+        padding: 15px;
+    }
+
+    .forgot-form input[type="email"] {
+        padding: 8px;
+    }
+
+    .reg-button {
+        padding: 8px;
+    }
+}

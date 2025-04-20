@@ -1,0 +1,26 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="payment-section">
+  <div class="payment-container">
+    <div class="payment-header">
+      <h1>Complete Your Payment</h1>
+      <p>Securely pay with PayPal for your BragBags order</p>
+    </div>
+
+    <div class="paymet-paypal">{{ paypal.render }}</div>
+
+    <div class="payment-security">
+      <i class="fas fa-lock"></i>
+      <span>Secure Payment Processing</span>
+    </div>
+
+    <div class="payment-footer">
+      <p>
+        By completing this payment, you agree to our
+        <a href="#">Terms of Service</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -10,14 +10,10 @@
       <a href="{% url "about" %}">About</a>
       <a href="{% url "contact" %}">Contact Us</a>
       {% if request.user.is_authenticated %}
-      <div class="dropdown">
-        <a href="{% url 'profile' %}" class="dropbtn">Profile</a>
-        <div class="dropdown-content">
-            <a href="{% url 'address' %}">Address</a>  
-            <a href="{% url 'order' %}">Orders</a>  
-        </div>
-    </div>
-      <a href="{% url "logout" %}">Logout</a>
+      <a href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'address' %}">Address</a>  
+      <a href="{% url 'order' %}">Orders</a>
+      <a href="{% url 'logout' %}">Logout</a>
       <a href="{% url "viewcart" %}"><i class="fa-solid fa-cart-shopping"></i>
         {% if cart_count > 0 %}
           <span class="cart-count" style="border:2px solid black;">{{cart_count}}</span>

@@ -1,0 +1,326 @@
+/* .viewcart_title{
+    display: flex;
+    justify-content: center;
+}
+
+.viewcart_title h1{
+    margin-top: 200px;
+    margin-bottom: 40px;
+}
+
+
+
+.main-viewbox{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.main-viewbox:hover{
+    background-color: rgb(222, 231, 231);
+}
+
+.viewcart-image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.dec-counter i, .add-counter i, .delete_icon i{
+    font-size: 25px;
+    color: #000;
+}
+
+.qunatity_item{
+    font-size: 20px;
+    border: 2px solid black;
+    width: 40px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.viewcart-price h5{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pay_button{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(220, 88, 40);
+    color: #000;
+}
+
+.pay-button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+} */
+
+
+/* ===== General Styles ===== */
+/* body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+} */
+
+/* ===== Cart Title ===== */
+.viewcart_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewcart_title h1 {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* ===== Cart Item Box ===== */
+#view_box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.main-viewbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-viewbox:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Product Image ===== */
+.viewcart-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.viewcart-image img:hover {
+    transform: scale(1.1);
+}
+
+/* ===== Product Name ===== */
+.viewcart-name h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-left: 15px;
+}
+
+/* ===== Quantity Controls ===== */
+.dec-counter, .add-counter, .delete_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dec-counter i, 
+.add-counter i, 
+.delete_icon i {
+    font-size: 22px;
+    color: #444;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dec-counter i:hover, 
+.add-counter i:hover, 
+.delete_icon i:hover {
+    color: rgb(220, 88, 40);
+    transform: scale(1.2);
+}
+
+/* ===== Quantity Box ===== */
+.qunatity_item {
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #444;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+/* ===== Price Section ===== */
+.viewcart-price h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #222;
+}
+
+/* ===== Delete Icon ===== */
+.delete_icon i {
+    color: #d9534f;
+    font-size: 22px;
+}
+
+.delete_icon i:hover {
+    color: #c9302c;
+}
+
+/* ===== Pay Button ===== */
+.pay-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.pay_button {
+    width: 200px;
+    height: 50px;
+    background: rgb(220, 88, 40);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pay_button:hover {
+    background: rgb(200, 60, 20);
+    transform: scale(1.05);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+    .main-viewbox {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        width: 95%;
+    }
+
+    .viewcart-image img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .viewcart-name h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .dec-counter, .add-counter {
+        margin: 10px 0;
+    }
+
+    .qunatity_item {
+        width: 50px;
+        height: 40px;
+        font-size: 18px;
+        line-height: 38px;
+    }
+
+    .viewcart-price h5 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Fixes for Extra Small Screens (Below 785px) */
+@media (max-width: 785px) {
+    .main-viewbox {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .viewcart-image img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .qunatity_item {
+        width: 40px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .pay_button {
+        width: 160px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ----------------------- */
+
+.order-summary {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px #000;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.summary-table th, .summary-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-table th {
+    background-color: #f1f1f1;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.pay-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pay_button {
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.pay_button:hover {
+    background-color: #c9302c;
+}

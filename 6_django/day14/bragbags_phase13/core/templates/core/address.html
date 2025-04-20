@@ -1,0 +1,109 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="address">
+  <div class="address__container">
+    <div class="address__header">
+      <h2 class="address__title">Manage Addresses</h2>
+      <p class="address__subtitle">Add or manage your delivery addresses</p>
+    </div>
+
+    <div class="address__content">
+      <div class="address__form-section">
+        <div class="address__form-header">
+          <i class="fas fa-plus-circle"></i>
+          <h3>Add New Address</h3>
+        </div>
+
+        <form
+          class="address__form"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
+          {% csrf_token %} {% for a in ad %}
+          <div class="address__form-group">
+            <label class="address__label">{{ a.label_tag }}</label>
+            <div class="address__field">{{ a }}</div>
+            <div class="address__error">{{ a.errors }}</div>
+            <span
+              id="{{ a.name }}-error"
+              class="error-message"
+              style="color: red"
+            ></span>
+          </div>
+          {% endfor %}
+
+          <button type="submit" class="address__submit-btn">
+            <i class="fas fa-save"></i> Save Address
+          </button>
+        </form>
+      </div>
+
+      <div class="address__list-section">
+        <div class="address__list-header">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Saved Addresses</h3>
+        </div>
+
+        <div class="address__list">
+          {% for ad in address %}
+          <div class="address__card">
+            <div class="address__card-header">
+              <h3 class="address__card-title">{{ ad.name }}</h3>
+            </div>
+            <div class="address__card-body">
+              <p class="address__card-text">
+                <strong>Address:</strong> {{ ad.address }}
+              </p>
+              <p class="address__card-text">
+                <strong>City:</strong> {{ ad.city }}
+              </p>
+              <p class="address__card-text">
+                <strong>State:</strong> {{ ad.state }}
+              </p>
+              <p class="address__card-text">
+                <strong>Pincode:</strong> {{ ad.pincode }}
+              </p>
+            </div>
+            <div class="address__card-actions">
+              <a
+                href="{% url 'deleteaddress' ad.id %}"
+                class="address__delete-btn"
+              >
+                <i class="fas fa-trash"></i> Delete Address
+              </a>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+    const nameField = document.querySelector('input[name="name"]');
+    const pincodeField = document.querySelector('input[name="pincode"]');
+    let isValid = true;
+
+    document
+      .querySelectorAll(".error-message")
+      .forEach((elem) => (elem.textContent = ""));
+
+    if (/\d/.test(nameField.value)) {
+      document.getElementById("name-error").textContent =
+        "Name should not contain numbers";
+      isValid = false;
+    }
+
+    if (!/^\d{6}$/.test(pincodeField.value)) {
+      document.getElementById("pincode-error").textContent =
+        "Pincode must be exactly 6 digits";
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+
+{% endblock content %}

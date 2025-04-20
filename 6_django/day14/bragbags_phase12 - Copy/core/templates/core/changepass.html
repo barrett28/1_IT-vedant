@@ -1,18 +1,65 @@
-{% extends "core/base.html" %} {% load static %} {% block content %}
-<h1 style="margin-top: 100px">change Password here</h1>
+{% extends "core/base.html" %} {% block content %}
 
-<form action="" method="POST" novalidate>
-  {% csrf_token %}
+<div class="changepass">
+  <div class="changepass__container">
+    <div class="changepass__header">
+      <div class="changepass__icon">
+        <i class="fas fa-lock"></i>
+      </div>
+      <h2 class="changepass__title">Change Password</h2>
+      <p class="changepass__subtitle">
+        Create a strong password for your account
+      </p>
+    </div>
 
-  <div class="user_name">
-    <h3>Welcome {{request.user.first_name}}</h3>
+    {% if messages %}
+    <!---->
+    {% for message in messages %}
+    <div class="changepass__message">
+      <i class="fas fa-check-circle"></i>
+      <p>{{ message }}</p>
+    </div>
+    {% endfor %}
+    <!---->
+    {% endif %}
+
+    <div class="changepass__form-wrapper">
+      <form method="POST" class="changepass__form">
+        {% csrf_token %}
+        <!---->
+        {% for field in mf %}
+        <div class="changepass__form-group">
+          <label class="changepass__label">{{ field.label }}</label>
+          <div class="changepass__field">
+            {{ field }}
+            <i class="fas fa-eye-slash password-toggle"></i>
+          </div>
+          {% if field.errors %}
+          <div class="changepass__error">
+            {% for error in field.errors %}
+            <p class="changepass__error-text">
+              <i class="fas fa-exclamation-circle"></i>
+              {{ error }}
+            </p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <!---->
+        <div class="changepass__actions">
+          <button type="submit" class="changepass__submit-btn">
+            <i class="fas fa-key"></i>
+            Update Password
+          </button>
+          <a href="{% url 'profile' %}" class="changepass__back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Back to Profile
+          </a>
+        </div>
+      </form>
+    </div>
   </div>
+</div>
 
-  {{mf.as_p}}
-
-  <input type="submit" />
-</form>
-
-{% if messages %} {% for message in messages %}
-<span class="alert alert-success">{{message}}</span>
-{% endfor %} {% endif %} {% endblock content %}
+{% endblock content %}

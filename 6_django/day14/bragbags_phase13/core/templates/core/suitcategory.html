@@ -1,0 +1,30 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+{% comment %} <div class="suitcase-category">
+  {% for sc in sc %}
+  <div class="box" id="box1">
+    <a href="{% url "product" sc.id %}">
+      <img src="{{ sc.luggage_image.url }}" alt="suit_images" />
+    </a> <br>
+    <p class="p_block">&#8377;{{sc.discounted_price}}</p>
+    <i>{{sc.original_price}}</i>
+    <p>{{sc.small_description}}</p>
+  </div>
+  {% endfor %}
+</div> {% endcomment %}
+
+<div class="container1">
+  {% for sc in sc %}
+  <div class="block">
+    <a href="{% url "product" sc.id %}">
+      <img src="{{ sc.luggage_image.url }}" alt="back_images" />
+    </a>
+    <div class="details1">
+      <p>{{sc.small_description}}</p>
+      <p class="price">&#8377;{{sc.discounted_price}}</p>
+      <i class="original-price">&#8377;{{sc.original_price}}</i>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

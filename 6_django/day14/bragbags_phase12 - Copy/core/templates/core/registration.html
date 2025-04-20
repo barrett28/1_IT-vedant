@@ -1,28 +1,59 @@
 {% extends "core/base.html" %} {% load static %} {% block content %}
 
-<div class="register_title">
-  <h1>Register here</h1>
+<div class="register">
+  <div class="register__container">
+    <div class="register__header">
+      <div class="register__icon">
+        <i class="fas fa-user-plus"></i>
+      </div>
+      <h2 class="register__title">Create Account</h2>
+      <p class="register__subtitle">Join us by creating your account</p>
+    </div>
+
+    <div class="register__form-wrapper">
+      <form class="register__form" method="POST" novalidate>
+        {% csrf_token %} {% if mf.non_field_errors %}
+        <!---->
+        {% for error in mf.non_field_errors %}
+        <div class="register__error">
+          <span class="register__error-text">
+            <i class="fas fa-exclamation-circle"></i>
+            {{ error }}
+          </span>
+        </div>
+        {% endfor %} {% endif %} {% for m in mf %}
+        <div class="register__form-group">
+          <label class="register__label">{{ m.label_tag }}</label>
+          <div class="register__field">{{ m }}</div>
+          {% if m.errors %}
+          <div class="register__field-error">
+            {% for error in m.errors %}
+            <p class="register__error-text">
+              <i class="fas fa-exclamation-circle"></i>
+              {{ error }}
+            </p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="register__submit-btn">
+          <i class="fas fa-user-plus"></i>
+          Create Account
+        </button>
+
+        <div class="register__footer">
+          <p>
+            Already have an account?
+            <a href="{% url 'login' %}" class="register__login-link"
+              >Login here</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-
-<div class="reg-form">
-  <form class="register-form" action="" method="POST" novalidate>
-    {% csrf_token %}
-    <!---->
-    {% if mf.non_field_errors %}
-    <!---->
-    {% for error in mf.non_field_errors %}
-    <!---->
-    {{error}}
-    <!---->
-    {% endfor %} {% endif %} {% for m in mf%}
-    <div>{{m.label_tag}} {{m}} {{m.errors}}</div>
-    {% endfor %}
-
-    <br />
-
-    <input class="reg-button" type="submit" value="Register" />
-  </form>
-</div>
-<!---->
 
 {% endblock content %}

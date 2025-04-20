@@ -1,0 +1,53 @@
+.footer-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-brand {
+    max-width: 300px;
+}
+
+.footer-brand p {
+    margin: 10px 0;
+}
+
+.footer-icons i {
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-icons i:hover {
+    color: #f39c12;
+}
+
+.footer-links, .footer-help, .footer-faq {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a, .footer-help a, .footer-faq a {
+    color: white;
+    text-decoration: none;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover, .footer-help a:hover, .footer-faq a:hover {
+    color: #f39c12;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 15px;
+}
