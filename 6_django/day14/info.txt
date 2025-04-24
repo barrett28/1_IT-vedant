@@ -1,4 +1,4 @@
-phase12 latest hai 
+phase13 latest hai 
 
-thode kaam bache hai 
-messages daalna and validators lagana (address, login , register me)
+ek kaam bacha hai 
+landing page ko responsive

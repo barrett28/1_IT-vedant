@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+
+<body>
+    <script>
+        const promone = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let error = false
+                if (error) {
+                    resolve({username: "vedant", password: "1230"})
+                } else {
+                    reject("Error: something went wrong")
+                }
+            }, 1000)
+        })
+        // promone.then((user) => {
+        //     console.log(user);
+        //     return user.username
+        // }).then((username) => {
+        //     console.log(username);
+        // })
+        //     .catch((err) => {
+        //         console.log(err);
+
+        //     })
+
+        async function promiseHandler() {
+            try {
+                const response = await promone
+                console.log(response);
+            } catch (error) {
+                console.log(error);
+
+            }
+        }
+
+        promiseHandler()
+
+    </script>
+
+</body>
+
+</html>
