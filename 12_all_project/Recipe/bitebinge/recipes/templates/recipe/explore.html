@@ -1,0 +1,15 @@
+{% extends 'recipe/base.html' %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'recipes/css/explore.css' %}" />
+{% endblock %} {% block content %}
+<main class="explore-page">
+  <div class="recipe-grid">
+    {% for recipe in recipes %}
+    <a href="{% url 'recipe_detail' recipe.id %}" class="recipe-card">
+      <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" />
+      <h3>{{ recipe.title }}</h3>
+      <p>{{ recipe.ingredients|truncatewords:15 }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

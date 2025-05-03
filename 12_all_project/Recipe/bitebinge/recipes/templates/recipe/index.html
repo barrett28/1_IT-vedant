@@ -1,0 +1,70 @@
+{% extends "recipe/base.html" %} {% load static %} {% block content %}
+
+<section class="section1">
+  <div class="center">
+    <div class="center-part1">
+      <h1>
+        <i class="ri-shining-2-fill"></i> Welcome to Fusion - Your Ultimate
+        Recipe Destination!
+      </h1>
+      <p>
+        Discover mouthwatering recipes, from traditional classics to modern
+        delights. Whether you're a beginner or a pro chef, we've got something
+        delicious for you <span class="excla">!</span> 🍲✨
+      </p>
+      <h3>
+        Want to add your recipe?
+        <a href="{% url "add_recipe" %}"><button>Add Mine</button></a>
+      </h3>
+      <!-- <button class="part1-button">Explore</button> -->
+    </div>
+    <div class="center-part2">
+      <img src="{% static "recipe/images/recipe-landing.png" %}"
+      alt="recipe-landing" />
+    </div>
+  </div>
+</section>
+
+<section class="section2">
+  <div class="services">
+    <h3>Services</h3>
+    <p>
+      Got a secret family recipe? Share it with the world! Upload your own
+      creations with images, ingredients, and step-by-step instructions.
+    </p>
+  </div>
+  <div class="container">
+    {% for fp in featured_recipes %}
+    <div class="elem left1">
+      <img src="{{ fp.image.url }}" alt="image-section" />
+      <p>
+        Title: {{fp.title}} <br />
+        Ingredients: {{fp.ingredients}}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="explore-button">
+    <a href="explore"><button>Explore more</button></a>
+  </div>
+</section>
+
+<section class="section3">
+  <div class="up">
+    <img src="{% static "recipe/images/left-barb.svg" %}" alt="" />
+    <p>
+      Save Your Favorite Recipes - Bookmark and save delicious recipes to
+      revisit anytime, <br />
+      making cooking easier and more convenient!
+    </p>
+  </div>
+  <div class="down">
+    <p>
+      Rate & Comment - Share your feedback, rate recipes, and engage with a
+      community of food lovers by leaving comments and tips!
+    </p>
+    <img src="{% static "recipe/images/right.svg" %}" alt="" />
+  </div>
+</section>
+{% endblock content %}
