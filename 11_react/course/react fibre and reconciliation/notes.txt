@@ -1,0 +1,18 @@
+how to install Django 
+version check -> cmd
+super user create -> cmd
+
+diff makemigrations and migrate
+diff project and app 
+
+all commands
+
+mvt -> m, v, t -> ye sb ka kya kaam hai 
+
+v -> view -> Python functions or classes that handle the logic for processing web requests and returning responses
+
+
+homesfy ka first page 
+loosely coupled framework
+common asked questions 
+little bit of rest framework
