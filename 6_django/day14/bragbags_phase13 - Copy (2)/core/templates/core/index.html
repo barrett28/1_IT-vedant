@@ -1,0 +1,320 @@
+{% extends "core/base.html" %} {% load static %}
+<!---->
+{% block navbar %}{% endblock navbar %}
+<!---->
+{% block content %}
+<div id="main">
+  <nav>
+    <a href="#" id="logo-name">BragBags</a>
+    <div class="cntr-nav">
+      <a href="{% url "about" %}">About</a>
+      <a href="{% url "contact" %}">Contact Us</a>
+      {% if request.user.is_authenticated %}
+      <a href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'address' %}">Address</a>  
+      <a href="{% url 'order' %}">Orders</a>
+      <a href="{% url 'logout' %}">Logout</a>
+      <a href="{% url "viewcart" %}"><i class="fa-solid fa-cart-shopping"></i>
+        {% if cart_count > 0 %}
+          <span class="cart-count" style="border:2px solid black;">{{cart_count}}</span>
+        {% endif %}
+      </a>
+      {% else %}
+      <a href="/registration/">Register</a>
+      <a href="{% url "login" %}">Login</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <div class="one">
+    <h1>BragBags</h1>
+    <img id="suitcase1" src="{% static 'core/images/bagt8.png' %}" alt="" />
+    <img id="suitcase2" src="{% static 'core/images/bagt6.png' %}" alt="" />
+    <img id="suitcase3" src="{% static 'core/images/bagt7.png' %}" alt="" />
+  </div>
+
+  <div class="two">
+    <div class="left-two">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill="#252054"
+          d="M38.5,-47.8C51.6,-34.8,65.2,-24.4,69.9,-10.4C74.6,3.5,70.4,20.8,62.2,36.7C54,52.6,41.8,67,28.6,66.5C15.4,66,1.3,50.7,-15.2,43.8C-31.7,37,-50.6,38.5,-57.6,31C-64.6,23.5,-59.8,6.9,-55.7,-8.7C-51.6,-24.3,-48.2,-38.8,-39,-52.5C-29.9,-66.1,-14.9,-78.8,-1.1,-77.5C12.7,-76.1,25.3,-60.7,38.5,-47.8Z"
+          transform="translate(100 100)"
+        />
+      </svg>
+    </div>
+    <div class="right-two">
+      <h1>Bags That Speak for You</h1>
+      <p>Your bag, your statement! Explore our exclusive collection and carry confidence wherever you go.
+        Designed for trendsetters and travelers, BragBack offers premium-quality bags with a perfect blend of fashion and function.
+        Why settle for ordinary when you can Brag? Get the perfect bag that suits your personality and needs
+        Backpacks, Duffle, Travel bags, and more - all in one place! Elevate your style with BragBack today.
+      </p>
+    </div>
+  </div>
+
+  <div class="three">
+    <div class="card-sec">
+      <div class="top-sec">
+        <img src="{% static 'core/images/bgtrans1.png' %}" alt="" />
+      </div>
+      <div class="bottom-sec">
+        <p>Why wait? Explore &</p>
+        <a class="bottom-sec-button" href="{% url "backpackcat" %}"><button>Buy Now</button></a>
+      </div>
+    </div>
+    <div class="card-sec">
+      <div class="top-sec"></div>
+      <div class="bottom-sec">
+        <p>Why wait? Explore &</p>
+        <a class="bottom-sec-button" href="{% url "suitcategory" %}"><button>Buy Now</button></a>
+      </div>
+    </div>
+    <div class="card-sec">
+      <div class="top-sec">
+        <img src="{% static 'core/images/bgtrans2.png' %}" alt="" />
+      </div>
+      <div class="bottom-sec">
+        <p>Why wait? Explore &</p>
+        <a class="bottom-sec-button" href="{% url "dufflecat" %}"><button>Buy Now</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!--product section-->
+
+<div class="product-container">
+  <div class="product-types">
+    <div class="pro-cate-heading">
+      <h1>Our Category</h1>
+    </div>
+    <div class="type-1">
+      <a href="{% url "suitcategory" %}">
+        <img src="{% static "core/images/asset-13.jpeg" %}" alt="asset13"></a
+      >
+      <!--  <a href=""> <p>Explore More &gt;</p> </a>-->
+    </div>
+    <div class="type-2">
+      <a href="{% url "backpackcat" %}"> <img src="{% static "core/images/asset-17.jpeg" %}" alt="asset17"></a>
+      <!-- <p>Explore More &gt;</p> -->
+      
+    </div>
+    <div class="type-3">
+      
+      <a href="{% url "dufflecat" %}"> <img src="{% static "core/images/duffle.jpeg" %}" alt="asset17"></a>
+      <!--<p>Explore More &gt;</p>-->
+    </div>
+    <div class="type-4">
+      <a href="{% url "briefcase" %}"> <img src="{% static "core/images/briefcase.jpeg" %}" alt="asset17"></a>
+      <!-- <p>Explore More &gt;</p>-->
+      
+    </div>
+  </div>
+</div>
+
+<!-- Tilted Container Section -->
+<div class="tilted-container">
+  <div class="tilt-1">
+    <div class="img-section">
+      <img src="{% static "core/images/asset-54.png" %}" alt="tilted-1">
+    </div>
+    <div class="tilt-text">
+      <h3>Best in selling</h3>
+      <p>
+        Shop BragBags's best-sellers online. Discover the most popular, <br />
+        top-rated travel gear handpicked by BragBags fans!
+      </p>
+      <!--  <button type="submit">Shop Now</button>-->
+    </div>
+  </div>
+  <div class="tilt-2">
+    <div class="tilt-text">
+      <h3>One Stop Shop</h3>
+      <p>
+        Shop new carry-on luggage to backpacks. <br />
+        Freshen up your next trip with the latest in luggage and travel gear.
+      </p>
+      <!--  <button type="submit">Shop Now</button>-->
+    </div>
+    <div class="img-section">
+      <img src="{% static "core/images/asset-55-flip.png" %}" alt="tilted-1">
+    </div>
+  </div>
+</div>
+
+<!--Wave work-->
+
+<div id="second">
+  <h1 id="work">Upcoming Products</h1>
+  <div class="elem">
+      <img src="{% static "core/images/ladybag1.jpg" %}" alt="ladybag1">
+      <h1>Satchel</h1>
+      <h5>2025</h5>
+      {% comment %} <a href="http://bragbags.pythonanywhere.com/">View</a> {% endcomment %}
+  </div>
+  <div class="elem">
+      <img src="{% static "core/images/ladybag2.jpeg" %}"
+          alt="ladybag2">
+      <h1>Tote</h1>
+      <h5>2025</h5>
+  </div>
+  <div class="elem lastelem">
+      <img src="{% static "core/images/ladybag3.jpg" %}" alt="ladybag3">
+      <h1> Gloss Bag</h1>
+      <h5>2025</h5>
+  </div>
+</div>
+
+<!-- slide show -->
+
+<div class="slide-container">
+  <div class="slide-full-cont">
+    <div class="slideshow-cont">
+      <img class="slide active" src="{% static 'core/images/asset-21.jpeg' %}" alt="asset21">
+      <img class="slide" src="{% static 'core/images/asset-22.jpeg' %}" alt="asset22">
+      <img class="slide" src="{% static 'core/images/asset-24.jpeg' %}" alt="asset24">
+      <img class="slide" src="{% static 'core/images/asset-37.jpeg' %}" alt="asset37">
+    </div>
+    <div class="text-desc">
+      <h4>We do have Small Size section</h4>
+      <i id="child-sec">-Adorable bags for your adorable ones.</i>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="footer-section">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <h3>BragBags</h3>
+      <p>We have bags that suit your style from a wide range of categories.</p>
+      <div class="footer-icons">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h5>Links</h5>
+      <a href="/">Home</a>
+      <a href="/">About Us</a>
+      <a href="/">Contact</a>
+      <a href="/">Login</a>
+    </div>
+    <div class="footer-help">
+      <h5>Help</h5>
+      <a href="/">Terms & Conditions</a>
+      <a href="/">Privacy Policy</a>
+      <a href="/">Customer Service</a>
+    </div>
+    <div class="footer-faq">
+      <h5>FAQ</h5>
+      <a href="/">Account</a>
+      <a href="/">Manage Deliveries</a>
+      <a href="/">Orders</a>
+      <a href="/">Payments</a>
+    </div>
+  </div>
+  <hr />
+  <div class="footer-bottom">
+    <p>BragBags.co &copy; 2025, All Rights Reserved</p>
+  </div>
+</footer>
+
+{% block footer %}{% endblock footer %}
+
+</div>
+
+
+<!-- GSAP Script -->
+
+<script>
+
+  let slides = document.querySelectorAll(".slide");
+      let currentIndex = 0;
+
+      function showSlides() {
+          slides.forEach(slide => slide.classList.remove("active"));
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add("active");
+      }
+
+      setInterval(showSlides, 2000); 
+
+      function toggleMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        const hamburger = document.querySelector('.hamburger');
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    }
+
+  function initAnimations() {
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+    // Reinitialize GSAP timeline
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".two",
+        start: "0% 95%",
+        end: "70% 50%",
+        scrub: true,
+        // markers: true, // debugging time pr Uncomment karo
+      }
+    });
+
+    
+    gsap.from("#suitcase1", {
+      x: 120,
+      y: -100,
+      duration: 2,
+      delay: 1,
+    });
+
+    gsap.from("#suitcase2", {
+      y: -100,
+      duration: 2,
+      delay: 1,
+    });
+
+    gsap.from("#suitcase3", {
+      x: -120,
+      y: -100,
+      duration: 2,
+      delay: 1,
+    });
+
+    tl.to("#suitcase2", {
+      top: "125%",
+      left: "8%",
+    });
+
+    // Second timeline for section three
+    var t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".three",
+        start: "0% 90%",
+        end: "60% 50%",
+        scrub: true,
+        // markers: true, // debugging time pr Uncomment karo
+      }
+    });
+
+    t2.to("#suitcase2", {
+      top: "209%",
+      left: "37%",
+    });
+  }
+
+  
+  initAnimations();
+
+  // Reinitialize animations when navigating back to the homepage
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted) { // Check if the page is loaded from the cache
+      initAnimations();
+    }
+  });
+</script>
+{% endblock content %}

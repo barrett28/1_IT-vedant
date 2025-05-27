@@ -1,0 +1,38 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
+    path('index2/', views.index2, name="index2"),
+    path('suitcategory/', views.suit_category, name="suitcategory"),
+    path('backpackcat/', views.backpack_category, name="backpackcat"),
+    path('product/<int:id>/', views.product, name='product'),
+    path('dufflecat/', views.dufflecat, name='dufflecat'),
+    path('briefcasecat/', views.briefcase, name='briefcase'),
+    path('registration/', views.registration, name='registration'),
+    path('profile/', views.profile, name='profile'),
+    path('login/', views.log_in, name='login'),
+    path('logout/', views.user_logout, name='logout'),
+    path('changepassword/',views.changepassword, name="changepassword"),
+    path('add_to_cart/<int:id>/', views.add_to_cart, name='addtocart'),
+    path('view_cart/', views.view_cart, name='viewcart'),
+    path('add_quantity/<int:id>/', views.add_quantity, name='add_quantity'),
+    path('del_quantity/<int:id>/', views.delete_quantity, name='del_quantity'),
+    path('delete_cart_item/<int:id>/', views.delete_cart_item, name='deletecartitem'),
+    path('address/', views.address, name='address'),
+    path('delete_address/<int:id>', views.delete_address, name='deleteaddress'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('payment_success/<int:selected_address_id>',views.payment_success,name='paymentsuccess'),
+    path('payment_failed/',views.payment_failed,name='paymentfailed'),
+    path('payment/', views.payment, name='payment'),
+    path('buynow/<int:id>', views.buynow, name='buynow'),
+    path('buynow_payment/<int:id>', views.buynow_payment, name='buynowpayment'),
+    path('buynow_payment_success/<int:selected_address_id>/<int:id>', views.buynow_payment_success, name='buynowpaymentsuccess'),
+    path('forgotpassword/',views.forgot_password, name="forgotpassword"),
+    path('reset_password/<uidb64>/<token>/', views.reset_password, name='resetpassword'),
+    path('password_reset_done/', views.password_reset_done, name='passwordresetdone'),
+    path('order/',views.order,name='order'),
+    path('passresetinfo/', views.resetpassinfo, name='passresetinfo')
+]

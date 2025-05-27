@@ -1,0 +1,269 @@
+{% extends "core/base.html" %} {% block css %}
+<style>
+  body {
+    background: #f5f5f5;
+    font-family: "Muli", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .order-rec-container {
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px;
+    border: 2px solid black;
+  }
+
+  .receipt-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 100px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-top: 4px solid #ff6f61;
+    border-bottom: 4px solid #ff6f61;
+  }
+
+  .receipt-title {
+    color: #ff6f61;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .receipt-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .receipt-info-item {
+    flex: 1;
+    text-align: left;
+  }
+
+  .receipt-info-item:last-child {
+    text-align: right;
+  }
+
+  .receipt-info-label {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .receipt-info-value {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .receipt-pricing {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .receipt-pricing-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .receipt-pricing-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .receipt-pricing-label {
+    color: #555;
+    font-size: 14px;
+  }
+
+  .receipt-pricing-value {
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .receipt-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #ff6f61;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .receipt-total-label {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .receipt-total-value {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .receipt-tracking {
+    margin-bottom: 20px;
+  }
+
+  .receipt-tracking-title {
+    color: #ff6f61;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .receipt-progress-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .receipt-progress-bar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #ddd;
+    z-index: 1;
+  }
+
+  .receipt-progress-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+  }
+
+  .receipt-progress-step.active {
+    color: #ff6f61;
+  }
+
+  .receipt-progress-step::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 5px;
+  }
+
+  .receipt-progress-step.active::before {
+    background: #ff6f61;
+  }
+
+  .receipt-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+
+  .receipt-footer-logo {
+    height: 30px;
+    opacity: 0.3;
+  }
+
+  .receipt-footer-text {
+    color: #777;
+    font-size: 12px;
+  }
+
+  .receipt-footer-link {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
+{% endblock css %} {% block content %}
+<div class="order-rec-container">
+  {% for o in orders %}
+  <div class="receipt-card">
+    <div class="receipt-title">Purchase Receipt</div>
+    <div class="receipt-info">
+      <div class="receipt-info-item">
+        <div class="receipt-info-label">Date</div>
+        <div class="receipt-info-value">{{o.order_at}}</div>
+      </div>
+      <div class="receipt-info-item">
+        <div class="receipt-info-label">Order No.</div>
+        <div class="receipt-info-value">{{o.id}}</div>
+      </div>
+    </div>
+    <div class="receipt-pricing">
+      <div class="receipt-pricing-item">
+        <div class="receipt-pricing-label">{{ o.product.name }}</div>
+        <div class="receipt-pricing-value">
+          ₹ {{ o.product.discounted_price }}
+        </div>
+      </div>
+      <div class="receipt-pricing-item">
+        <div class="receipt-pricing-label">Quantity</div>
+        <div class="receipt-pricing-value">{{o.quantity}}</div>
+      </div>
+      <div class="receipt-pricing-item">
+        <div class="receipt-pricing-label">Shipping</div>
+        <div class="receipt-pricing-value">₹ 200</div>
+      </div>
+    </div>
+    <div class="receipt-total">
+      <div class="receipt-total-label">Total</div>
+      <div class="receipt-total-value">₹ {{ o.total_price}}</div>
+      <!--{{ o.total_price | add:200}}-->
+    </div>
+    <div class="receipt-tracking">
+      <div class="receipt-tracking-title">Tracking Order</div>
+      <div class="receipt-progress-bar">
+        <div
+          class="receipt-progress-step {% if o.status == 'PENDING' or o.status == 'PROCESSING' or o.status == 'COMPLETED' %}active{% endif %}"
+        >
+          Pending
+        </div>
+        <div
+          class="receipt-progress-step {% if o.status == 'PROCESSING' or o.status == 'COMPLETED' %}active{% endif %}"
+        >
+          Processing
+        </div>
+        <div
+          class="receipt-progress-step {% if o.status == 'COMPLETED' %}active{% endif %}"
+        >
+          Completed
+        </div>
+      </div>
+    </div>
+    <div class="receipt-footer">
+      <img
+        class="receipt-footer-logo"
+        src="https://i.imgur.com/YBWc55P.png"
+        alt="Logo"
+      />
+      <div class="receipt-footer-text">
+        Want any help? Please
+        <a class="receipt-footer-link" href="{% url "contact" %}">contact us</a>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock content %}

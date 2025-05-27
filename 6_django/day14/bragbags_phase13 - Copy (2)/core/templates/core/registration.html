@@ -1,0 +1,115 @@
+{% extends "core/base.html" %} {% load static %} {% block content %}
+
+<div class="register">
+  <div class="register__container">
+    <div class="register__header">
+      <div class="register__icon">
+        <i class="fas fa-user-plus"></i>
+      </div>
+      <h2 class="register__title">Create Account</h2>
+      <p class="register__subtitle">Join us by creating your account</p>
+    </div>
+
+    {% if messages %} {% for message in messages %}
+    <div
+      class="alert alert-success"
+      style="text-align: center; color: green; margin: 10px"
+    >
+      {{ message }}
+    </div>
+    {% endfor %} {% endif %}
+
+    <div class="register__form-wrapper">
+      <form
+        class="register__form"
+        method="POST"
+        novalidate
+        onsubmit="return validateRegistrationForm()"
+      >
+        {% csrf_token %} {% if mf.non_field_errors %}
+        <!---->
+        {% for error in mf.non_field_errors %}
+        <div class="register__error">
+          <span class="register__error-text">
+            <i class="fas fa-exclamation-circle"></i>
+            {{ error }}
+          </span>
+        </div>
+        {% endfor %} {% endif %} {% for m in mf %}
+        <div class="register__form-group">
+          <label class="register__label">{{ m.label_tag }}</label>
+          <div class="register__field">{{ m }}</div>
+          {% if m.errors %}
+          <div class="register__field-error">
+            {% for error in m.errors %}
+            <p class="register__error-text">
+              <i class="fas fa-exclamation-circle"></i>
+              {{ error }}
+            </p>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <span
+            id="{{ m.name }}-error"
+            class="error-message"
+            style="color: red"
+          ></span>
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="register__submit-btn">
+          <i class="fas fa-user-plus"></i>
+          Create Account
+        </button>
+
+        <div class="register__footer">
+          <p>
+            Already have an account?
+            <a href="{% url 'login' %}" class="register__login-link"
+              >Login here</a
+            >
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validateRegistrationForm() {
+    const firstNameField = document.querySelector('input[name="first_name"]');
+    const lastNameField = document.querySelector('input[name="last_name"]');
+    const emailField = document.querySelector('input[name="email"]');
+    let isValid = true;
+
+    // Clear previous error messages
+    document
+      .querySelectorAll(".error-message")
+      .forEach((elem) => (elem.textContent = ""));
+
+    // Validate first name (no numbers allowed)
+    if (/\d/.test(firstNameField.value)) {
+      document.getElementById("first_name-error").textContent =
+        "First name should not contain numbers";
+      isValid = false;
+    }
+
+    // Validate last name (no numbers allowed)
+    if (/\d/.test(lastNameField.value)) {
+      document.getElementById("last_name-error").textContent =
+        "Last name should not contain numbers";
+      isValid = false;
+    }
+
+    // Validate email (must contain @)
+    if (!emailField.value.includes("@")) {
+      document.getElementById("email-error").textContent =
+        "Email must contain @ symbol";
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+
+{% endblock content %}

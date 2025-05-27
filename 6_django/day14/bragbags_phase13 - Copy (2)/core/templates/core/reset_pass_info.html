@@ -1,0 +1,20 @@
+{% extends "core/base.html" %} {% load static %}
+
+<!---->
+
+{% block content %}
+<div class="pass-reset-container">
+    <div class="pass-reset">
+        <div class="pass-reset-heading">
+            <h1>We send link to change password on your registered email </h1>
+            <p>After changing please reload and click on to login button  </p>
+        </div>
+    </div>
+    <br>
+    {% comment %} <div class="login-redirect">
+        <a href="{% url "login" %}"><button class="pass-reset-button">login</button></a>
+    </div> {% endcomment %}
+</div>
+
+{% endblock content %}
+
