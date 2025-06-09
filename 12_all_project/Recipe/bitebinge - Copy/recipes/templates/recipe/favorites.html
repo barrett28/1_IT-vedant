@@ -1,0 +1,22 @@
+{% extends 'recipe/base.html' %} {% block content %}
+<div class="favorites-container">
+  <h1>Your Favorite Recipes</h1>
+  {% if favorites %}
+  <div class="favorites-grid">
+    {% for bookmark in favorites %}
+    <div class="favorite-recipe">
+      <img
+        src="{{ bookmark.recipe.image.url }}"
+        alt="{{ bookmark.recipe.title }}"
+      />
+      <h3>{{ bookmark.recipe.title }}</h3>
+      <a href="{% url 'recipe_detail' bookmark.recipe.id %}">View Recipe</a>
+      <a href="{% url 'toggle_favorite' bookmark.recipe.id %}">Remove</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>You haven't added any recipes to favorites yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

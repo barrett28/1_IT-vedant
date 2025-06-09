@@ -1,0 +1,36 @@
+{% extends 'recipe/base.html' %} {% load static %} {% block content %}
+<div class="main-div">
+  <main class="recipe-detail-page">
+    <!-- Hero Section -->
+    <div class="recipe-hero-container">
+      <img src="{{ recipe.image.url }}" class="recipe-hero" alt="{{ recipe.title }}" />
+      <div class="hero-overlay">
+        <div class="recipe-header">
+          <h1>{{ recipe.title }}</h1>
+          <div class="recipe-meta">
+            <span>By {{ recipe.user.username }}</span>
+            <span>{{ recipe.created_at|date:"M d, Y" }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Columns -->
+    <div class="recipe-content">
+      <section class="ingredients">
+        <h2>Ingredients</h2>
+        <p>{{ recipe.ingredients }}</p>
+      </section>
+
+      <section class="instructions">
+        <h2>Instructions</h2>
+        <p>{{ recipe.process }}</p>
+      </section>
+    </div>
+  </main>
+  <a href="{% url " explore" %}"> <button>Back to recipes</button> </a>
+
+
+</div>
+
+{% endblock %}

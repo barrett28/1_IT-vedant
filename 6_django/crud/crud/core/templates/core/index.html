@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud revision</title>
+  </head>
+  <body>
+    <h1>User Registration Form</h1>
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      <!---->
+      {{uf.as_p}}
+      <input type="Submit" />
+    </form>
+    <br />
+
+    <!---->
+    <h1>User Present in model</h1>
+
+    <!---->
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+
+      {% for data in um %}
+      <tr>
+        <th>{{data.id}}</th>
+        <th>{{data.user_name}}</th>
+        <th>{{data.phone_number}}</th>
+        <th> <a href="{% url "update" data.id %}"> <button>Edit</button></a></th>
+        <th> <a href="{% url "delete" data.id %}"> <button>Delete</button></a></th>
+      </tr>
+
+      {% endfor %}
+    </table>
+    <!---->
+  </body>
+</html>

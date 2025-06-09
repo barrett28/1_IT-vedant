@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% comment %} <link rel="stylesheet" href="{% static "core/css/bootstrap.min.css" %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "recipe/css/main.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/navbar.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/footer.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/explore.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/details.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/fav.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/login.css" %}">
+    <link rel="stylesheet" href="{% static "recipe/css/addrecipe.css" %}">
+    <title>BiteBinge</title>
+  </head>
+  <body>
+    
+    {% include "recipe/navbar.html" %}
+    {% block content %}{% endblock content %}
+    {% include "recipe/footer.html" %}
+
+    {% comment %} <script src="{% static "core/js/jquery.js" %}"></script>
+    <script src="{% static "core/js/popper.js" %}"></script> {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js" integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="{% static 'recipe/js/landing_animations.js' %}"></script>
+    <script src="https://kit.fontawesome.com/154c2a8c03.js" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

@@ -1,12 +1,15 @@
 import React from "react";
 import SideNav from "./partials/SideNav";
+import TopNav from "./partials/TopNav";
 
 function Home() {
-  document.title = "Movie App | HomePage";
+  document.title = "ShowTimez | HomePage";
   return (
-    <div>
+    <div className="flex w-screen h-screen">
       <SideNav />
-      <div className="w-[80vw] h-[100vh] bg-red-300">jfn</div>
+      <div className="w-[80vw] h-[100vh] ">
+        <TopNav />
+      </div>
     </div>
   );
 }

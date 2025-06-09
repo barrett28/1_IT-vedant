@@ -1,0 +1,59 @@
+{% extends "recipe/base.html" %} {% load static %} {% block content %}
+
+<div class="main-div">
+  <h1 class="favorites-title">Your Favorite Recipes</h1>
+
+  {% if favorite_recipes %}
+  <div class="recipes-grid">
+    {% for recipe in favorite_recipes %}
+    <div class="recipe-card">
+      <a href="{% url 'recipe_detail' recipe.id %}">
+        <div class="recipe-image-container">
+          <img
+            src="{{ recipe.image.url }}"
+            alt="{{ recipe.title }}"
+            class="recipe-image"
+          />
+          <div class="recipe-overlay">
+            <button class="view-recipe-btn">View Recipe</button>
+          </div>
+        </div>
+        <div class="recipe-info">
+          <h3 class="recipe-title">{{ recipe.title }}</h3>
+          <p class="recipe-meta">By {{ recipe.user.username }}</p>
+          <div class="recipe-ingredients-preview">
+            <p>{{ recipe.ingredients|truncatewords:15 }}</p>
+          </div>
+        </div>
+      </a>
+      <div class="recipe-actions">
+        <form action="{% url 'fav' recipe.id %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="remove-favorite-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="red"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              />
+            </svg>
+            Remove
+          </button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="no-favorites">
+    <p>You haven't saved any recipes yet!</p>
+    <a href="{% url 'explore' %}" class="explore-btn">Explore Recipes</a>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

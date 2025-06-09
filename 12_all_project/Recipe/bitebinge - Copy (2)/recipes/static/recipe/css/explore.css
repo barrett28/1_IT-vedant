@@ -1,0 +1,49 @@
+/* explore.css - Styles specific to the explore page */
+.explore-page {
+  padding: 50px 50px 200px 50px;
+  height: auto;
+  /* background-color: #B29B7D; */
+  background-color: #c1b9b4c1;
+}
+
+.explore-page .recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.explore-page .recipe-card {
+  /* border: 1px solid #070000; */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  background: rgb(6, 0, 0);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.explore-page .recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.explore-page .recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.explore-page .recipe-card h3 {
+  padding: 15px;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.explore-page .recipe-card p {
+  padding: 0 15px 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 0.9rem;
+}

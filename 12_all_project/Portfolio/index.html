@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="loco.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Project1</title>
+</head>
+
+<body>
+    <div id="cursor"></div>
+    <main>
+        <div id="hero">
+            <div id="nav">
+                <a href="#">PortFolio</a>
+                <h4>Bharat Singh</h4>
+            </div>
+            <div id="heading">
+                <h1>Python</h1>
+                <div class="sechead">
+                    <h1 id="head2">Developer</h1>
+                    <h5>from Kalyan</h5>
+                </div>
+            </div>
+            <div id="sideheading">
+                <h5>Available for Working</h5>
+                <!-- <h5>from may 1 <sup>st</sup></h5> -->
+            </div>
+            <div id="headfooter">
+                <a href="./experience.html">
+                    <p id="work1">First Work with ReactJs <i class="ri-arrow-right-up-line"></i></p>
+                </a>
+                <a href="#">
+                    <p id="work1">Then With Python Django </p>
+                </a>
+                <p>Good in HTML CSS Js</p>
+            </div>
+        </div>
+
+        <div id="second">
+            <h1 id="work">My Works</h1>
+            <div class="elem">
+                <img src="./images/brag1.png" alt="brag1">
+                <h1>BragBags</h1>
+                <h5>2025</h5>
+                <!-- <a href="http://bragbags.pythonanywhere.com/">View</a> -->
+            </div>
+            <div class="elem">
+                <img src="https://images.unsplash.com/reserve/EnF7DhHROS8OMEp2pCkx_Dufer%20food%20overhead%20hig%20res.jpg?q=80&w=2078&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="recipe">
+                <h1>BiteBinge</h1>
+                <h5>2025</h5>
+            </div>
+            <div class="elem">
+                <img src="./images/crypto.png" alt="crypto">
+                <h1>CryptopLace</h1>
+                <h5>2025</h5>
+            </div>
+            <div class="elem lastelem">
+                <img src="./images/github.png" alt="git">
+                <h1>Github Profile Finder</h1>
+                <h5>2025</h5>
+            </div>
+        </div>
+
+
+        <div id="third">
+            <div class="about-section">
+                <h1>About Me</h1>
+                <p>A passionate developer focused on creating interactive and responsive web applications. Skilled in
+                    both front-end and back-end technologies.</p>
+                <div class="skills">
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">CSS</div>
+                    <div class="skill-item">Tailwind CSS</div>
+                    <div class="skill-item">Bootstrap</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">Django</div>
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">JavaScript</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="four">
+            <div class="contact-section">
+                <h1>Let's Connect</h1>
+                <div class="contact-links">
+                    <a href="https://github.com/barrett28" class="contact-item">
+                        <i class="ri-github-line"></i>
+                        <span>Github</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/bharat-singh28/" class="contact-item">
+                        <i class="ri-linkedin-line"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>bharat2808singh@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+        integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        document.querySelectorAll(".elem").forEach(function (elem) {
+
+            elem.addEventListener("mouseleave", function (dets) {
+                gsap.to(elem.querySelector("img"), {
+                    opacity: 0,
+                    ease: Power3,
+                    duration: 0.5,
+                });
+            });
+
+            var rot = 0
+            var swing = 0
+            elem.addEventListener("mousemove", function (dets) {
+                // console.log(e.clientX, e.clientY)
+                // console.log(e.clientY - elem.getBoundingClientRect().top)
+                var diff = dets.clientY - elem.getBoundingClientRect().top;
+                swing = dets.clientX - rot
+                rot = dets.clientX
+                gsap.to(elem.querySelector("img"), {
+                    opacity: 1,
+                    ease: Power3,
+                    top: diff,
+                    left: dets.clientX,
+                    rotate: gsap.utils.clamp(-10, 10, swing)
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

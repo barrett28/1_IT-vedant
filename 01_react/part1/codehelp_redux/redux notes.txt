@@ -1,0 +1,50 @@
+1. tho redux ek store ki Tarah hai jaha pr hm ek store banayenge and us store me data rakh bhi sakte hai and data use bhi kr sakte hai 
+
+2. ye ek Tarah ka data centralization hai 
+
+3. Data flow:
+
+|  button -> onClick -> handler
+|			|_
+|			   action dispatch karega
+|				|
+|		               vo jayega store me 
+|					|
+|				     store me reducers honge
+|				     us action k relevant reducer me jayega
+|						|
+|					   us reducer ka logic execute karega
+|							|
+|						 and execute hone k baad vo
+|					         store me state update kr dega
+|								|
+|							aur vo state jaha jaha ui me
+|						        use hui hogi vaha value 
+|							update ho jayega 
+|
+|_________________________________________________________________________________________
+
+ye image form me bhi hai jo ki folder me mil jayega
+
+
+
+4. terms:
+	store -> ye ek pura entity hai jaha pr sare state define hote hai 
+		ya fir esa keh sakte hai ki sari cheeze isme hi hoti hai 
+
+	slice(features) -> har ek feature k state ko maintain krne ka code slice me likha hota 			hai 
+			Slice me "initialState" define ki jati hai aur "reducer" bhi likha jata 			hai
+
+	action -> koi bhi event jese ki onClick etc aur uske sath
+		hm ek payload bhi bhejh sakte hai 
+
+	payload -> extra information jo ki logic me baadme kaam asakta hai 
+	
+	Reducers -> function hai jisme hm sara logic likha jata hai 
+	           Ye ek Tarah se old State leta hai and action ki value leta hai aur fir naya 	           state deta hai.
+
+	State -> data hota hai
+
+
+	
+	
