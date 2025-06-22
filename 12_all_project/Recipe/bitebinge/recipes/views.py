@@ -126,14 +126,26 @@ def fav(request, id):
     return redirect('recipe_detail', recipe_id=id)
 
 
+@login_required
+def toggle_favorite(request, recipe_id):
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+    bookmark, created = Bookmark.objects.get_or_create(
+        user=request.user,
+        recipe=recipe
+    )
+    if not created:
+        bookmark.delete()
+    return redirect('recipe_detail', recipe_id=recipe.id)
+
+@login_required
 def favorite_recipes(request):
-    if request.user.is_authenticated:
-            
-        # Get all bookmarks for the current user
-        bookmarks = Bookmark.objects.filter(user=request.user).select_related('recipe')
-        # Extract the recipes from the bookmarks
-        favorite_recipes = [bookmark.recipe for bookmark in bookmarks]
-        
-        return render(request, 'recipe/fav.html', {'favorite_recipes': favorite_recipes})
+    favorites = Bookmark.objects.filter(user=request.user).select_related('recipe')
+    return render(request, 'recipe/favorites.html', {'favorites': favorites})
+    
+def search_recipes(request):
+    query = request.GET.get('q', '')
+    if query:
+        results = Recipe.objects.filter(title__icontains=query)
     else:
-        return redirect('login')
+        results = Recipe.objects.none()
+    return render(request, 'recipe/search_results.html', {'results': results, 'query': query})

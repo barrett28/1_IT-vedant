@@ -3,41 +3,7 @@
   <main class="recipe-detail-page">
     <!-- Hero Section -->
     <div class="recipe-hero-container">
-      <input
-  value="favorite-button"
-  name="favorite-checkbox"
-  id="favorite"
-  checked="checked"
-  type="checkbox"
-  onclick="window.location.href='{% url 'fav' recipe.id %}'"
-/>
-<label class="container" for="favorite">
-  <svg
-    class="feather feather-heart"
-    stroke-linejoin="round"
-    stroke-linecap="round"
-    stroke-width="2"
-    stroke="currentColor"
-    fill="none"
-    viewBox="0 0 24 24"
-    height="24"
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-    ></path>
-  </svg>
-  <div class="action">
-    <span class="option-1">Add to Favorites</span>
-    <span class="option-2">Added to Favorites</span>
-  </div>
-</label>
-      <img
-        src="{{ recipe.image.url }}"
-        class="recipe-hero"
-        alt="{{ recipe.title }}"
-      />
+      <img src="{{ recipe.image.url }}" class="recipe-hero" alt="{{ recipe.title }}" />
       <div class="hero-overlay">
         <div class="recipe-header">
           <h1>{{ recipe.title }}</h1>
@@ -46,6 +12,13 @@
             <span>{{ recipe.created_at|date:"M d, Y" }}</span>
           </div>
         </div>
+        {% comment %} <button class="favorite-btn" onclick="window.location.href='{% url 'toggle_favorite' recipe.id %}'">
+          {% if is_favorite %}
+            <i class="fas fa-heart"></i> Remove from Favorites
+          {% else %}
+            <i class="far fa-heart"></i> Add to Favorites
+          {% endif %}
+        </button> {% endcomment %}
       </div>
     </div>
 

@@ -1,9 +1,0 @@
-index page load ho gaya hai 
-images bhi lg gayi abhi 
-css ko aur navbar ko alag alag krna hai 
-
-images ko alag setting bhi krna hai 
-
-and data base se entry krke 
-frontpage pr display krna hai 
-
