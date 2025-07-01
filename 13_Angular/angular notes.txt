@@ -1,0 +1,6 @@
+Data Binding:
+
+1) string interpolation -> {{}}
+2) Event Binding
+3) Property Binding
+4) Two way binding ->(drop down jesa kuch search karte vakt suggestions ate hai)
