@@ -1,0 +1,40 @@
+SERIALIZE krne k liye 
+
+model -> register through admin -> serializer (for serializing) -> view (for logic building) -> urls 
+
+ese data serialize hoga 
+
+complex data --------------> python native datatype ---------------> json Data
+   	      Serialization 			      render into json
+___________________________________________________________________________________________
+
+DESERIALIZE krne k liye
+
+parsed data ko convert krke complex data me krta hai -> after validating the incoming data 
+
+
+json data --------------------> python native datatype ----------------> complex data type
+	   parse data 				       De-serialization 
+
+
+BytesIO() --> json data ko string krke dega ye 
+JSONParser() --> json data ko python native data type
+De-serialization --> parsed Data ko complex data me change krta hai 
+
+
+steps:
+creating serializer object 
+serializer = StudentSerializer(data = parsed_data)
+
+validate 
+serializer.is_valid()
+
+serializer.validate_data() or serializder.errors()
+
+
+
+
+
+
+
+
