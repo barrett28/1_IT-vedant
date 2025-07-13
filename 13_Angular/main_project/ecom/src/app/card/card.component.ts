@@ -14,6 +14,13 @@ export class CardComponent {
   myName = '';
   isDisabled = false;
 
+  newProduct = {
+    name: '',
+    description: '',
+    price: '',
+    img: 'https://images.unsplash.com/photo-1591914227599-30b05407ed7b?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  };
+
   product1 = {
     name: 'Lakes',
     desc: 'Beautiful Uncrowded lakes',
@@ -43,5 +50,16 @@ export class CardComponent {
   onInput(event: any) {
     this.myName += event.data;
     console.log(this.myName);
+  }
+
+  onSubmit() {
+    // console.log(this.newProduct);
+    this.products.push(this.newProduct);
+    this.newProduct = {
+      name: '',
+      description: '',
+      price: '',
+      img: 'https://images.unsplash.com/photo-1720884413532-59289875c3e1?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    };
   }
 }

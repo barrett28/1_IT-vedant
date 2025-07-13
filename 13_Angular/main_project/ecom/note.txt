@@ -1,0 +1,5 @@
+structural directive -> ngIf, ngFor
+
+attribute directive -> ngStyle, ngClass
+
+[ngClass] -> 'class' : boolean(ture/false)   
